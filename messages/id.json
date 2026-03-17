@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "login": "Masuk",
+    "register": "Daftar"
+  },
+  "nav": {
+    "gallery": "Galeri",
+    "home": "Beranda",
+    "platform": "Platform",
+    "product": "Produk Kami",
+    "solution": "Solusi Kami"
+  }
+}

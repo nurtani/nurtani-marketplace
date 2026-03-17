@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "login": "Login",
+    "register": "Register"
+  },
+  "nav": {
+    "gallery": "Gallery",
+    "home": "Home",
+    "platform": "Platform",
+    "product": "Our Products",
+    "solution": "Our Solution"
+  }
+}
