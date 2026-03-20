@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n();
+</script>
+
 <template>
   <div class="relative w-full">
     <div class="grid grid-cols-2 gap-x-3 md:gap-x-8 items-start w-full">
@@ -7,7 +11,7 @@
         >
           <NuxtImg
             src="/assets/picture/pakbudi.png"
-            alt="Pak Budi - Petani Cabai Organik"
+            :alt="t('hero.visual.alt_farmer')"
             class="col-start-1 row-start-1 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             format="webp"
             fit="cover"
@@ -17,12 +21,11 @@
             class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-12 md:pb-18 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
           >
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
-              Pak Budi –<br class="md:hidden" />
-              Petani
+              {{ t("hero.visual.farmer_name") }} –<br class="md:hidden" />
+              {{ t("hero.visual.farmer_role").split(" ")[0] }}
             </p>
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
-              Cabai<br class="md:hidden" />
-              Organik
+              {{ t("hero.visual.farmer_role").split(" ").slice(1).join(" ") }}
             </p>
           </div>
         </div>
@@ -33,10 +36,10 @@
           <h3
             class="text-[28px] md:text-[48px] font-extrabold text-white leading-tight"
           >
-            10rb+
+            {{ t("hero.visual.stats_number") }}
           </h3>
           <p class="text-[12px] md:text-[16px] text-white font-semibold mt-1">
-            Orang Green Flag
+            {{ t("hero.visual.stats_label") }}
           </p>
         </div>
       </div>
@@ -53,14 +56,12 @@
             />
           </div>
           <h4 class="text-[14px] md:text-[18px] font-bold leading-tight">
-            100% Organik
+            {{ t("hero.visual.feature_title") }}
           </h4>
           <p
             class="text-[12px] md:text-[16px] font-medium text-[#6B7280]/80 mt-2 md:mt-3 leading-relaxed"
           >
-            Tumbuh asli berkat<br />
-            Petani yang sayang<br />
-            alam.
+            {{ t("hero.visual.feature_desc") }}
           </p>
         </div>
 
@@ -69,7 +70,7 @@
         >
           <NuxtImg
             src="/assets/picture/product.png"
-            alt="Organik Sprouts dan Sayuran"
+            :alt="t('hero.visual.alt_product')"
             class="w-full h-full object-cover aspect-[4/5] transition-transform duration-500 group-hover:scale-105"
             format="webp"
             fit="cover"

@@ -9,5 +9,24 @@
     "platform": "Platform",
     "product": "Our Products",
     "solution": "Our Solution"
+  },
+  "hero": {
+    "content": {
+      "title_top": "Healthy Upstream,",
+      "title_bottom": "Happy Downstream",
+      "description": "NurTani maintains the authenticity of the process from production to consumption transparently, ensuring our nature is preserved for future happiness.",
+      "btn_market": "View Market",
+      "btn_join": "Join Now"
+    },
+    "visual": {
+      "farmer_name": "Mr. Budi",
+      "farmer_role": "Organic Chili Farmer",
+      "stats_number": "10k+",
+      "stats_label": "Green Flag People",
+      "feature_title": "100% Organic",
+      "feature_desc": "Grown naturally by farmers who truly care for nature.",
+      "alt_farmer": "Mr. Budi - Organic Chili Farmer",
+      "alt_product": "Organic Sprouts and Vegetables"
+    }
   }
 }

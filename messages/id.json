@@ -9,5 +9,24 @@
     "platform": "Platform",
     "product": "Produk Kami",
     "solution": "Solusi Kami"
+  },
+  "hero": {
+    "content": {
+      "title_top": "Hulu Sehat,",
+      "title_bottom": "Hilir Bahagia",
+      "description": "NurTani menjaga keaslian proses produksi sampai konsumsi secara terbuka agar alam kita tetap terjaga untuk kebahagiaan selanjutnya.",
+      "btn_market": "Lihat Pasar",
+      "btn_join": "Gabung sekarang"
+    },
+    "visual": {
+      "farmer_name": "Pak Budi",
+      "farmer_role": "Petani Cabai Organik",
+      "stats_number": "10rb+",
+      "stats_label": "Orang Green Flag",
+      "feature_title": "100% Organik",
+      "feature_desc": "Tumbuh asli berkat Petani yang sayang alam.",
+      "alt_farmer": "Pak Budi - Petani Cabai Organik",
+      "alt_product": "Organik Sprouts dan Sayuran"
+    }
   }
 }
