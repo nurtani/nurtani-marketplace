@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/image", "@nuxtjs/i18n"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/ui",
+    "@nuxt/image",
+    "@nuxtjs/i18n",
+    "@nuxt/icon",
+    "@nuxt/fonts",
+  ],
 
   i18n: {
     defaultLocale: "id",
@@ -30,6 +37,12 @@ export default defineNuxtConfig({
         commaDangle: "never",
         braceStyle: "1tbs",
       },
+    },
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ["@vue/devtools-core", "@vue/devtools-kit"],
     },
   },
 });

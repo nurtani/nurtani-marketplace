@@ -3,6 +3,7 @@ const { t } = useI18n();
 
 defineProps({
   isMobile: { type: Boolean, default: false },
+  isScrolled: { type: Boolean, default: false },
 });
 </script>
 
@@ -11,8 +12,9 @@ defineProps({
     <NuxtLink
       to="/login"
       :class="[
-        'border border-white text-white rounded-lg text-center font-medium hover:bg-white hover:text-[#1A4D2E] transition',
+        'bg-[#1A4D2E] text-white rounded-lg text-center font-medium transition-all duration-300 border hover:bg-white hover:text-[#1A4D2E]',
         isMobile ? 'px-4 py-3' : 'px-4 py-2',
+        !isScrolled && !isMobile ? 'border-transparent' : 'border-white',
       ]"
     >
       {{ t("auth.login") }}
@@ -21,8 +23,11 @@ defineProps({
     <NuxtLink
       to="/register"
       :class="[
-        'bg-[#FFEEAD] text-[#1A4D2E] rounded-lg text-center font-semibold hover:opacity-90 transition',
+        'rounded-lg text-center font-semibold transition-all duration-300 border',
         isMobile ? 'px-4 py-3' : 'px-4 py-2',
+        !isScrolled && !isMobile
+          ? 'bg-transparent text-white border-white hover:bg-white hover:text-[#1A4D2E]'
+          : 'bg-[#FFEEAD] text-[#1A4D2E] border-transparent hover:opacity-90',
       ]"
     >
       {{ t("auth.register") }}

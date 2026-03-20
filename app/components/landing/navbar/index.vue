@@ -1,7 +1,20 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted, onUnmounted } from "vue";
 
 const isOpen = ref(false);
+const isScrolled = ref(false);
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 watch(isOpen, (newVal) => {
   if (typeof window !== "undefined") {
@@ -15,10 +28,17 @@ watch(isOpen, (newVal) => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 w-full bg-[#1A4D2E] text-white">
+  <header
+    :class="[
+      'fixed top-0 z-50 w-full transition-colors duration-300',
+      isScrolled || isOpen
+        ? 'bg-[#1A4D2E] text-white shadow-md'
+        : 'bg-transparent text-white border-b',
+    ]"
+  >
     <div
       :class="[
-        'relative z-10 w-full flex items-center justify-between px-6 py-4 bg-[#1A4D2E]',
+        'relative z-10 w-full flex items-center justify-between px-6 py-4 transition-colors duration-300',
         isOpen ? 'border-b border-white/20' : '',
       ]"
     >
@@ -28,15 +48,15 @@ watch(isOpen, (newVal) => {
 
       <div class="hidden md:flex items-center gap-4">
         <LandingNavbarLanguage />
-        <LandingNavbarAuth />
+        <LandingNavbarAuth :is-scrolled="isScrolled" />
       </div>
 
       <button
         class="md:hidden text-2xl focus:outline-none"
         @click="isOpen = !isOpen"
       >
-        <span v-if="!isOpen">☰</span>
-        <span v-else>✕</span>
+        <span v-if="!isOpen"><Icon name="gridicons:menu" /></span>
+        <span v-else><Icon name="ci:close-md" /></span>
       </button>
     </div>
 
@@ -54,7 +74,7 @@ watch(isOpen, (newVal) => {
         </div>
 
         <div class="mt-auto pb-32">
-          <LandingNavbarAuth :is-mobile="true" />
+          <LandingNavbarAuth :is-mobile="true" :is-scrolled="true" />
         </div>
       </div>
     </Transition>
