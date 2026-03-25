@@ -6,8 +6,9 @@
         alt="Icon Wheat Left"
         class="w-auto h-auto"
       />
-      <span class="text-sm font-bold tracking-[0.7px] text-[#1A4D2E] uppercase"
-        >Solusi Kami</span
+      <span
+        class="text-sm font-bold tracking-[0.7px] text-[#1A4D2E] uppercase"
+        >{{ t("solution.title_top") }}</span
       >
       <NuxtImg
         src="/icon/wheat2.png"
@@ -16,11 +17,14 @@
       />
     </div>
     <h2 class="text-3xl md:text-4xl font-extrabold text-[#1A4D2E] mb-4">
-      Bagaimana NurTani Mengatasi Masalah Ini
+      {{ t("solution.title_bottom") }}
     </h2>
     <p class="text-gray-500 text-base md:text-lg max-w-xl mx-auto">
-      NurTani menghubungkan petani langsung dengan pembeli melalui transparansi
-      produk.
+      {{ t("solution.description") }}
     </p>
   </div>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n();
+</script>

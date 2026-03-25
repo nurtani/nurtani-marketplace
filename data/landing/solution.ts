@@ -33,27 +33,27 @@ export const solutionsData = {
   en: [
     {
       id: 1,
-      icon: "i-heroicons-archive-box",
+      icon: "/icon/solution/solution1.png",
       title: "Agricultural Activity Logging",
       description:
         "Farmers record cultivation activities easily through a WhatsApp Bot.",
     },
     {
       id: 2,
-      icon: "i-heroicons-document-text",
+      icon: "/icon/solution/solution2.png",
       title: "Product History Documentation",
       description:
         "Cultivation history is recorded digitally and can be viewed transparently.",
     },
     {
       id: 3,
-      icon: "i-heroicons-building-storefront",
+      icon: "/icon/solution/solution3.png",
       title: "Direct Marketplace",
       description: "Farmers can sell their harvests directly to buyers.",
     },
     {
       id: 4,
-      icon: "i-heroicons-identification",
+      icon: "/icon/solution/solution4.png",
       title: "Blockchain Digital Certification",
       description: "Products have digital certificates to ensure authenticity.",
     },
