@@ -19,7 +19,7 @@
 
     <div
       class="relative z-10 container mx-auto lg:px-6 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center"
-      style="padding: 102px 24px 0px 24px"
+      style="padding: 102px 24px 35px 24px"
     >
       <LandingHeroTypography />
       <LandingHeroVisual />
