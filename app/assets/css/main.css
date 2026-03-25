@@ -4,6 +4,7 @@
 @layer base {
   html {
     font-family: "Poppins", sans-serif;
+    background-color: #1a4d2e;
   }
 }
 
@@ -33,4 +34,16 @@
 .slide-down-leave-to {
   transform: translateY(-100%);
   opacity: 0;
+}
+
+/* Gradient Card Solution */
+.gradient-border-wrapper {
+  padding: 2px;
+  background: linear-gradient(135deg, transparent 0%, #008236 100%);
+  box-shadow: 0 2px 12px 0 rgba(0, 130, 54, 0.08);
+}
+
+/* Gradient background card dark (card 2 & 4) */
+.gradient-bg-dark {
+  background: linear-gradient(135deg, #1a4731 0%, #008236 100%);
 }

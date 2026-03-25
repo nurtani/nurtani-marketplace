@@ -1,0 +1,8 @@
+import { createHotContext as __vite__createHotContext } from "/_nuxt/@vite/client";import.meta.hot = __vite__createHotContext("/@id/virtual:nuxt:%2FUsers%2Fpande%2FDocuments%2FProject%2Fnurtani-frontend%2F.nuxt%2Fnuxt-fonts-global.css");import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from "/_nuxt/@vite/client"
+const __vite__id = "virtual:nuxt:%2FUsers%2Fpande%2FDocuments%2FProject%2Fnurtani-frontend%2F.nuxt%2Fnuxt-fonts-global.css"
+const __vite__css = "\n/*# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoidmlydHVhbDpudXh0OiUyRlVzZXJzJTJGcGFuZGUlMkZEb2N1bWVudHMlMkZQcm9qZWN0JTJGbnVydGFuaS1mcm9udGVuZCUyRi5udXh0JTJGbnV4dC1mb250cy1nbG9iYWwuY3NzIiwibWFwcGluZ3MiOiIiLCJuYW1lcyI6W10sInNvdXJjZXMiOltdLCJ2ZXJzaW9uIjozfQ== */"
+__vite__updateStyle(__vite__id, __vite__css)
+import.meta.hot.accept()
+import.meta.hot.prune(() => __vite__removeStyle(__vite__id))
+document.querySelectorAll(`link[href="/_nuxt/virtual:nuxt:%2FUsers%2Fpande%2FDocuments%2FProject%2Fnurtani-frontend%2F.nuxt%2Fnuxt-fonts-global.css"]`).forEach(i=>i.remove())
+document.querySelectorAll(`link[href="/_nuxt/@fs/virtual:nuxt:%2FUsers%2Fpande%2FDocuments%2FProject%2Fnurtani-frontend%2F.nuxt%2Fnuxt-fonts-global.css"]`).forEach(i=>i.remove())

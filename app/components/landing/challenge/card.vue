@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import type { ChallengeCardProps } from "../../../../types/challenge";
+import type { ChallengeCardProps } from "../../../../types/landing/challenge";
 
 const props = withDefaults(defineProps<ChallengeCardProps>(), {
   align: "left",
@@ -17,12 +17,8 @@ const positionClass = computed(() => {
 <template>
   <div
     :class="[
-      'bg-[#FFF5C3] shadow-md flex flex-col gap-[6px] overflow-hidden text-center',
-
-      // Ubah p-3 menjadi p-[12px] agar lebih eksplisit sesuai Figma
+      'bg-[#FFF5C3] shadow-md flex flex-col justify-center gap-[6px] overflow-hidden text-center',
       'w-[120px] h-[95px] rounded-[8.67px] p-[12px]',
-
-      // Terapkan juga p-[12px] untuk desktop (atau sesuaikan jika desktop beda)
       'md:w-[220px] md:h-[142px] md:rounded-[8.67px] md:p-[12px]',
 
       positionClass,

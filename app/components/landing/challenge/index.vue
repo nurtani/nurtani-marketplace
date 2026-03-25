@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { challengesData } from "../../../../data/challenge";
+import { challengesData } from "../../../../data/landing/challenge";
 
 const { locale } = useI18n();
 const { t } = useI18n();
@@ -37,7 +37,7 @@ const activeChallenges = computed(() => {
       <LandingChallengeHeader />
 
       <!-- Grid untuk SEMUA ukuran, stagger kolom kanan -->
-      <div class="grid grid-cols-2 w-full gap-x-4 md:gap-x-64 pt-4 md:pt-0">
+      <div class="grid grid-cols-2 w-full gap-x-4 md:gap-x-96 pt-4 md:pt-0">
         <div class="flex flex-col gap-8 md:gap-10">
           <LandingChallengeCard
             v-for="(item, index) in activeChallenges.filter(
@@ -47,7 +47,7 @@ const activeChallenges = computed(() => {
             :title="item.title"
             :description="item.description"
             :align="index === 0 ? 'left' : 'center'"
-            :class="[index === 0 ? 'mb-2' : '', 'md:self-center']"
+            :class="[index === 0 ? 'mb-14 md:mb-0' : '', 'md:self-center']"
           />
         </div>
 
