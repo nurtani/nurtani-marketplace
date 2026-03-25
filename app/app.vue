@@ -9,15 +9,15 @@ useHead({
 
 const title = "NurTani";
 const description =
-  "A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.";
+  "NurTani menjaga keaslian proses produksi sampai konsumsi secara terbuka agar alam kita tetap terjaga.";
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
-  twitterImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
+  ogImage: "/assets/picture/preview-nurtani.png",
+  twitterImage: "/assets/picture/preview-nurtani.png",
   twitterCard: "summary_large_image",
 });
 </script>
