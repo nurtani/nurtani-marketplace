@@ -28,5 +28,13 @@
       "alt_farmer": "Mr. Budi - Organic Chili Farmer",
       "alt_product": "Organic Sprouts and Vegetables"
     }
+  },
+  "challenge": {
+    "header": {
+      "title_top": "Challenge",
+      "title_bottom": "Challenges in the Agricultural Supply Chain",
+      "description": "Agricultural distribution still poses challenges for farmers and buyers."
+    },
+    "caption": "Mr. Yus grows bitter melon in Sembung, Mengwi, Badung, Bali"
   }
 }

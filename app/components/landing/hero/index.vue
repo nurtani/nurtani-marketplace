@@ -14,7 +14,7 @@
       "
     ></div>
     <div
-      class="absolute inset-0 bg-[url('/assets/backgrounds/hero.jpeg')] bg-cover bg-center opacity-30"
+      class="absolute inset-0 bg-[url('/assets/backgrounds/hero.png')] bg-cover bg-center opacity-30"
     ></div>
 
     <div

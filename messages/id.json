@@ -28,5 +28,13 @@
       "alt_farmer": "Pak Budi - Petani Cabai Organik",
       "alt_product": "Organik Sprouts dan Sayuran"
     }
+  },
+  "challenge": {
+    "header": {
+      "title_top": "Tantangan",
+      "title_bottom": "Tantangan dalam Rantai Pasok Pertanian",
+      "description": "Distribusi pertanian masih memiliki kendala bagi petani dan pembeli."
+    },
+    "caption": "Pak Yus bertani Pare di Sembung, Mengwi, Badung, Bali"
   }
 }

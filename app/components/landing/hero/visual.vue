@@ -5,7 +5,7 @@ const { t } = useI18n();
 <template>
   <div class="relative w-full">
     <div class="grid grid-cols-2 gap-x-3 md:gap-x-8 items-start w-full">
-      <div class="flex flex-col gap-y-3 md:gap-y-6 mt-24">
+      <div class="flex flex-col gap-y-2 md:gap-y-4 mt-24">
         <div
           class="grid rounded-2xl md:rounded-3xl overflow-hidden shadow-xl group aspect-[3/4]"
         >
@@ -44,7 +44,7 @@ const { t } = useI18n();
         </div>
       </div>
 
-      <div class="flex flex-col gap-y-3 md:gap-y-6 mb-24">
+      <div class="flex flex-col gap-y-2 md:gap-y-4 mb-24">
         <div
           class="rounded-2xl md:rounded-3xl p-3 md:p-5 bg-white/95 shadow-2xl text-[#1A4D2E]"
         >
