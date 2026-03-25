@@ -20,7 +20,11 @@
 
     <!-- Mobile: Carousel -->
     <div class="md:hidden">
-      <div class="overflow-hidden">
+      <div
+        class="overflow-hidden"
+        @touchstart="handleTouchStart"
+        @touchend="handleTouchEnd"
+      >
         <div
           class="flex transition-transform duration-500 ease-in-out"
           :style="{ transform: `translateX(-${activeIndex * 100}%)` }"
@@ -57,6 +61,8 @@ import { solutionsData } from "../../../../data/landing/solution";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 
+import { useSwipe } from "~/composables/landing/useSwipe";
+
 const activeIndex = ref(0);
 const { locale } = useI18n();
 
@@ -64,4 +70,18 @@ const activeChallenges = computed(() => {
   const currentLang = locale.value as "id" | "en";
   return solutionsData[currentLang] || solutionsData["id"];
 });
+
+const nextSlide = (): void => {
+  if (activeIndex.value < activeChallenges.value.length - 1) {
+    activeIndex.value++;
+  }
+};
+
+const prevSlide = (): void => {
+  if (activeIndex.value > 0) {
+    activeIndex.value--;
+  }
+};
+
+const { handleTouchStart, handleTouchEnd } = useSwipe(nextSlide, prevSlide);
 </script>
