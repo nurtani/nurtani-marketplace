@@ -45,4 +45,12 @@ export default defineNuxtConfig({
       include: ["@vue/devtools-core", "@vue/devtools-kit"],
     },
   },
+
+  components: [
+    {
+      path: "~/components/reusable",
+      pathPrefix: false,
+    },
+    "~/components",
+  ],
 });

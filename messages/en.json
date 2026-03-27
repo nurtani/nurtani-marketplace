@@ -41,5 +41,10 @@
     "title_top": "Our Solutions",
     "title_bottom": "How NurTani Addresses This Issue",
     "description": "NurTani connects farmers directly with buyers through product transparency."
+  },
+  "product": {
+    "title_top": "Our Products",
+    "title_bottom": "Certified Agricultural Products",
+    "description": "Buy fresh produce from local farmers with transparent cultivation records and digital certificates."
   }
 }

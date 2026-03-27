@@ -18,12 +18,12 @@ const { t } = useI18n();
     </p>
     <div class="flex flex-wrap gap-3 md:gap-4 mt-2 md:mt-4">
       <button
-        class="bg-[#FFEEAD] text-[#1A4D2E] px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base"
+        class="bg-[#FFEEAD] text-[#1A4D2E] px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base cursor-pointer"
       >
         {{ t("hero.content.btn_market") }}
       </button>
       <button
-        class="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1A4D2E] transition text-sm md:text-base"
+        class="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1A4D2E] transition text-sm md:text-base cursor-pointer"
       >
         {{ t("hero.content.btn_join") }}
       </button>

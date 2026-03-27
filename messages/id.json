@@ -41,5 +41,10 @@
     "title_top": "Solusi Kami",
     "title_bottom": "Bagaimana NurTani Mengatasi Masalah Ini",
     "description": "NurTani menghubungkan petani langsung dengan pembeli melalui transparansi produk."
+  },
+  "product": {
+    "title_top": "Produk Kami",
+    "title_bottom": "Produk Pertanian Terverifikasi",
+    "description": "Beli hasil panen segar dari petani lokal dengan riwayat budidaya transparan dan sertifikat digital."
   }
 }
