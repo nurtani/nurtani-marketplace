@@ -19,7 +19,7 @@ const { t } = useI18n();
             preload
           />
           <div
-            class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-6 md:pb-24 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
+            class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-6 md:pb-8 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
           >
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
               {{ t("hero.visual.farmer_name") }} –<br class="md:hidden" />
