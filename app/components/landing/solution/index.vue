@@ -47,41 +47,18 @@
       </div>
 
       <!-- Dot Index -->
-      <LandingSolutionDotindex
+      <LandingDot
         :count="activeChallenges.length"
         v-model="activeIndex"
+        active-class="bg-[#1a4731]"
       />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { solutionsData } from "../../../../data/landing/solution";
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
+import { useSolutionCarousel } from "~/composables/landing/useSolutionCarousel";
 
-import { useSwipe } from "~/composables/landing/useSwipe";
-
-const activeIndex = ref(0);
-const { locale } = useI18n();
-
-const activeChallenges = computed(() => {
-  const currentLang = locale.value as "id" | "en";
-  return solutionsData[currentLang] || solutionsData["id"];
-});
-
-const nextSlide = (): void => {
-  if (activeIndex.value < activeChallenges.value.length - 1) {
-    activeIndex.value++;
-  }
-};
-
-const prevSlide = (): void => {
-  if (activeIndex.value > 0) {
-    activeIndex.value--;
-  }
-};
-
-const { handleTouchStart, handleTouchEnd } = useSwipe(nextSlide, prevSlide);
+const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd } =
+  useSolutionCarousel();
 </script>

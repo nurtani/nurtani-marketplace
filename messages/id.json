@@ -45,6 +45,13 @@
   "product": {
     "title_top": "Produk Kami",
     "title_bottom": "Produk Pertanian Terverifikasi",
-    "description": "Beli hasil panen segar dari petani lokal dengan riwayat budidaya transparan dan sertifikat digital."
+    "description": "Beli hasil panen segar dari petani lokal dengan riwayat budidaya transparan dan sertifikat digital.",
+    "button": "Temukan Produk Lainnya"
+  },
+  "gallery": {
+    "title_top": "Galeri",
+    "title_bottom": "Galeri Pertanian",
+    "description": "Melihat proses pertanian dan hasil panen segar dari petani lokal.",
+    "button": "Lihat Semua Galeroi Pertanian"
   }
 }

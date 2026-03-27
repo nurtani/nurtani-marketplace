@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { challengesData } from "../../../../data/landing/challenge";
+import { challengesData } from "../../../data/landing/challenge";
 
 const { locale } = useI18n();
 const { t } = useI18n();

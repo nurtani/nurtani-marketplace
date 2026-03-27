@@ -45,6 +45,13 @@
   "product": {
     "title_top": "Our Products",
     "title_bottom": "Certified Agricultural Products",
-    "description": "Buy fresh produce from local farmers with transparent cultivation records and digital certificates."
+    "description": "Buy fresh produce from local farmers with transparent cultivation records and digital certificates.",
+    "button": "Discover Other Products"
+  },
+  "gallery": {
+    "title_top": "Gallery",
+    "title_bottom": "Agriculture Gallery",
+    "description": "See the farming process and fresh produce from local farmers.",
+    "button": "View All Agriculture Galleries"
   }
 }

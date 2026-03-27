@@ -4,5 +4,6 @@
     <LandingChallenge />
     <LandingSolution />
     <LandingProduct />
+    <LandingGallery />
   </div>
 </template>
