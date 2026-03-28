@@ -14,19 +14,25 @@ const activeChallenges = computed(() => {
 
 <template>
   <section class="relative w-full flex flex-col py-16 md:py-20">
-    <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      style="background-image: url(&quot;/assets/backgrounds/farmer.png&quot;)"
-    ></div>
+    <NuxtImg
+      src="/assets/backgrounds/farmer.png"
+      alt="Background NurTani"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+      format="webp"
+      width="1920"
+      quality="80"
+      preload
+    />
 
     <div
-      class="absolute inset-0"
+      class="absolute inset-0 z-10 pointer-events-none"
       style="
         background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.55) 0%,
-          rgba(0, 0, 0, 0.25) 55%,
-          rgba(0, 0, 0, 0.55) 100%
+          to bottom,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.5) 30%,
+          rgba(0, 0, 0, 0.2) 55%,
+          rgba(0, 0, 0, 0.25) 100%
         );
       "
     ></div>

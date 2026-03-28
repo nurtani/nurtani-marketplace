@@ -2,14 +2,15 @@
   <div
     class="relative min-h-screen bg-[#F4F1E4] py-16 px-4 md:px-8 font-sans overflow-hidden"
   >
-    <div
-      class="absolute inset-0 z-0 pointer-events-none bg-repeat"
-      style="
-        background-image: url(&quot;/assets/backgrounds/product.png&quot;);
-        opacity: 0.07;
-        background-size: 400px;
-      "
-    ></div>
+    <NuxtImg
+      src="/assets/backgrounds/product.png"
+      alt="Background Pattern"
+      class="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none opacity-[0.07]"
+      format="webp"
+      width="600"
+      quality="80"
+      loading="lazy"
+    />
 
     <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
       <LandingProductHeader />

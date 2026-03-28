@@ -1,5 +1,5 @@
 import { ref, watch } from "vue";
-import { galleryData } from "~/data/landing/gallery"; // ✅ nama export yang benar
+import { galleryData } from "~/data/landing/gallery";
 
 export function useGalleryCarousel() {
   const activeSlide = ref(0);

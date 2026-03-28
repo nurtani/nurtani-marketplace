@@ -1,9 +1,9 @@
 <template>
   <div>
-    <LandingHero />
-    <LandingChallenge />
-    <LandingSolution />
-    <LandingProduct />
-    <LandingGallery />
+    <LazyLandingHero />
+    <LazyLandingChallenge />
+    <LazyLandingSolution />
+    <LazyLandingProduct />
+    <LazyLandingGallery />
   </div>
 </template>
