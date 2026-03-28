@@ -12,7 +12,7 @@
           #0d542b 100%
         );
       "
-    ></div>
+    />
     <NuxtImg
       src="/assets/backgrounds/hero.png"
       alt="Background NurTani"

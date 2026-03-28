@@ -1,6 +1,6 @@
 export interface DotProps {
-  count: number;
-  modelValue: number;
-  activeClass?: string;
-  inactiveClass?: string;
+  count: number
+  modelValue: number
+  activeClass?: string
+  inactiveClass?: string
 }

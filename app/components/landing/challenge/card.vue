@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import type { ChallengeCardProps } from "../../../../types/landing/challenge";
+import { computed } from 'vue'
+import type { ChallengeCardProps } from '../../../../types/landing/challenge'
 
 const props = withDefaults(defineProps<ChallengeCardProps>(), {
-  align: "left",
-});
+  align: 'left'
+})
 
 // Menentukan posisi flex item (kiri atau kanan)
 const positionClass = computed(() => {
-  if (props.align === "right") return "self-end";
-  if (props.align === "center") return "self-center";
-  return "self-start";
-});
+  if (props.align === 'right') return 'self-end'
+  if (props.align === 'center') return 'self-center'
+  return 'self-start'
+})
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const positionClass = computed(() => {
       'w-[120px] h-[95px] rounded-[8.67px] p-[12px]',
       'md:w-[220px] md:h-[142px] md:rounded-[8.67px] md:p-[12px]',
 
-      positionClass,
+      positionClass
     ]"
   >
     <h3

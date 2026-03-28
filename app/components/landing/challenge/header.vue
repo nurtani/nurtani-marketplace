@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -23,6 +24,8 @@ const { t } = useI18n();
     <h2 class="font-bold text-[28px]">
       {{ t("challenge.header.title_bottom") }}
     </h2>
-    <p class="text-base font-light">{{ t("challenge.header.description") }}</p>
+    <p class="text-base font-light">
+      {{ t("challenge.header.description") }}
+    </p>
   </div>
 </template>

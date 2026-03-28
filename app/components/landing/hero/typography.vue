@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -8,7 +9,7 @@ const { t } = useI18n();
     <h1
       class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-serif text-white"
     >
-      {{ t("hero.content.title_top") }}<br />
+      {{ t("hero.content.title_top") }}<br>
       <span class="text-[#FFEEAD] italic">{{
         t("hero.content.title_bottom")
       }}</span>

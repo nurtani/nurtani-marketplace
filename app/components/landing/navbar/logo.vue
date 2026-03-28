@@ -1,5 +1,8 @@
 <template>
-  <NuxtLink to="/" class="flex items-center gap-2">
+  <NuxtLink
+    to="/"
+    class="flex items-center gap-2"
+  >
     <NuxtImg
       src="/icon/nurtani.png"
       alt="Nurtani Logo"

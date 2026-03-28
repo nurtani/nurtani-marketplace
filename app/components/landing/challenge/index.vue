@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { challengesData } from "../../../data/landing/challenge";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { challengesData } from '../../../data/landing/challenge'
 
-const { locale } = useI18n();
-const { t } = useI18n();
+const { locale } = useI18n()
+const { t } = useI18n()
 
 const activeChallenges = computed(() => {
-  const currentLang = locale.value as "id" | "en";
-  return challengesData[currentLang] || challengesData["id"];
-});
+  const currentLang = locale.value as 'id' | 'en'
+  return challengesData[currentLang] || challengesData['id']
+})
 </script>
 
 <template>
@@ -35,7 +35,7 @@ const activeChallenges = computed(() => {
           rgba(0, 0, 0, 0.25) 100%
         );
       "
-    ></div>
+    />
 
     <div
       class="relative z-10 flex flex-col w-full max-w-5xl mx-auto px-6 gap-8 h-fit"
@@ -47,7 +47,7 @@ const activeChallenges = computed(() => {
         <div class="flex flex-col gap-8 md:gap-10">
           <LandingChallengeCard
             v-for="(item, index) in activeChallenges.filter(
-              (_, i) => i % 2 === 0,
+              (_, i) => i % 2 === 0
             )"
             :key="index"
             :title="item.title"
@@ -60,7 +60,7 @@ const activeChallenges = computed(() => {
         <div class="flex flex-col gap-8 md:gap-10 mt-[70px] md:mt-0">
           <LandingChallengeCard
             v-for="(item, index) in activeChallenges.filter(
-              (_, i) => i % 2 !== 0,
+              (_, i) => i % 2 !== 0
             )"
             :key="index"
             :title="item.title"

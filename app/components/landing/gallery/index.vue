@@ -10,7 +10,7 @@
 
         background-size: auto 300px;
       "
-    ></div>
+    />
 
     <div
       class="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center"
@@ -20,9 +20,9 @@
 
     <div class="relative z-10 w-full mt-4 mb-8">
       <button
-        @click="slidePrev"
         class="flex absolute left-2 md:left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-white/90 md:bg-white rounded-full items-center justify-center shadow-lg hover:bg-gray-50 active:scale-95 transition-all text-[#1a4d2e]"
         aria-label="Previous Slide"
+        @click="slidePrev"
       >
         <svg
           class="w-6 h-6"
@@ -36,14 +36,14 @@
             stroke-linejoin="round"
             stroke-width="2"
             d="M15 19l-7-7 7-7"
-          ></path>
+          />
         </svg>
       </button>
 
       <div
         ref="carouselRef"
-        @scroll="handleScroll"
         class="w-full flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 hide-scrollbar px-4 md:px-16 lg:px-24"
+        @scroll="handleScroll"
       >
         <div
           v-for="item in galleryData"
@@ -55,9 +55,9 @@
       </div>
 
       <button
-        @click="slideNext"
         class="flex absolute right-2 md:right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-white/90 md:bg-white rounded-full items-center justify-center shadow-lg hover:bg-gray-50 active:scale-95 transition-all text-[#1a4d2e]"
         aria-label="Next Slide"
+        @click="slideNext"
       >
         <svg
           class="w-6 h-6"
@@ -71,7 +71,7 @@
             stroke-linejoin="round"
             stroke-width="2"
             d="M9 5l7 7-7 7"
-          ></path>
+          />
         </svg>
       </button>
     </div>
@@ -79,8 +79,8 @@
     <div class="relative z-10 w-full flex flex-col items-center">
       <div class="flex items-center justify-center gap-2 mb-10 w-full">
         <LandingDot
-          :count="galleryData.length"
           v-model="activeSlide"
+          :count="galleryData.length"
           active-class="bg-[#FFEEAD]"
         />
       </div>
@@ -96,14 +96,14 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { galleryData } from "../../../data/landing/gallery";
-import { useGalleryCarousel } from "~/composables/landing/useGalleryCarousel";
-import LandingDot from "~/components/reusable/LandingDot.vue";
+import { useI18n } from 'vue-i18n'
+import { galleryData } from '../../../data/landing/gallery'
+import { useGalleryCarousel } from '~/composables/landing/useGalleryCarousel'
+import LandingDot from '~/components/reusable/LandingDot.vue'
 
-const { t } = useI18n();
-const { activeSlide, carouselRef, slidePrev, slideNext, handleScroll } =
-  useGalleryCarousel();
+const { t } = useI18n()
+const { activeSlide, carouselRef, slidePrev, slideNext, handleScroll }
+  = useGalleryCarousel()
 
-void carouselRef;
+void carouselRef
 </script>

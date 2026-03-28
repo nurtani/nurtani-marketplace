@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
-const localePath = useLocalePath();
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
 
 defineProps({
-  isMobile: { type: Boolean, default: false },
-});
+  isMobile: { type: Boolean, default: false }
+})
 </script>
 
 <template>

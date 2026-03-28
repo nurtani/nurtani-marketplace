@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -22,7 +23,7 @@ const { t } = useI18n();
             class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-6 md:pb-8 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
           >
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
-              {{ t("hero.visual.farmer_name") }} –<br class="md:hidden" />
+              {{ t("hero.visual.farmer_name") }} –<br class="md:hidden">
               {{ t("hero.visual.farmer_role").split(" ")[0] }}
             </p>
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">

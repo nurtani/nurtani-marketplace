@@ -3,125 +3,125 @@ export const productData = {
   id: [
     {
       id: 1,
-      image: "/assets/product/1.png",
+      image: '/assets/product/1.png',
       isFavorite: true,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Strawberry Segar",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Strawberry Segar',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 2,
-      image: "/assets/product/2.png",
+      image: '/assets/product/2.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Tomat Kristal Organik",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Tomat Kristal Organik',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 3,
-      image: "/assets/product/3.png",
+      image: '/assets/product/3.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Tomat Kristal Organik",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Tomat Kristal Organik',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 4,
-      image: "/assets/product/4.png",
+      image: '/assets/product/4.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Tomat Kristal Organik",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Tomat Kristal Organik',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
-    },
+      priceLabel: 'Harga per Kg',
+      price: 18500
+    }
   ],
   en: [
     {
       id: 1,
-      image: "/assets/product/1.png",
+      image: '/assets/product/1.png',
       isFavorite: true,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Fresh Strawberries",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Fresh Strawberries',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 2,
-      image: "/assets/product/2.png",
+      image: '/assets/product/2.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Organic Crystal Tomatoes",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Organic Crystal Tomatoes',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 3,
-      image: "/assets/product/3.png",
+      image: '/assets/product/3.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Organic Crystal Tomatoes",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Organic Crystal Tomatoes',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 4,
-      image: "/assets/product/4.png",
+      image: '/assets/product/4.png',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Organic Crystal Tomatoes",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Organic Crystal Tomatoes',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
-    },
-  ],
-};
+      priceLabel: 'Price per Kg',
+      price: 18500
+    }
+  ]
+}

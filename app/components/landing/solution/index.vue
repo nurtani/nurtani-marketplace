@@ -11,7 +11,7 @@
         v-for="(item, index) in activeChallenges"
         :key="item.id"
         :number="item.id"
-        :iconSrc="item.icon"
+        :icon-src="item.icon"
         :title="item.title"
         :description="item.description"
         :variant="index % 2 === 1 ? 'dark' : 'light'"
@@ -36,7 +36,7 @@
           >
             <LandingSolutionCard
               :number="item.id"
-              :iconSrc="item.icon"
+              :icon-src="item.icon"
               :title="item.title"
               :description="item.description"
               :variant="index % 2 === 1 ? 'dark' : 'light'"
@@ -48,8 +48,8 @@
 
       <!-- Dot Index -->
       <LandingDot
-        :count="activeChallenges.length"
         v-model="activeIndex"
+        :count="activeChallenges.length"
         active-class="bg-[#1a4731]"
       />
     </div>
@@ -57,8 +57,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSolutionCarousel } from "~/composables/landing/useSolutionCarousel";
+import { useSolutionCarousel } from '~/composables/landing/useSolutionCarousel'
 
-const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd } =
-  useSolutionCarousel();
+const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd }
+  = useSolutionCarousel()
 </script>

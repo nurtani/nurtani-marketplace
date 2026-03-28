@@ -12,7 +12,7 @@
 
     <div
       class="absolute inset-0 z-10 bg-gradient-to-t from-[#0e2207] via-[#0e2207]/80 to-transparent"
-    ></div>
+    />
 
     <div
       class="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20 flex flex-col text-white"
@@ -23,7 +23,7 @@
         {{ gallery.title }}
       </h2>
 
-      <hr class="border-white/30 mb-4 w-full" />
+      <hr class="border-white/30 mb-4 w-full">
 
       <div
         class="flex items-center gap-2 mb-2 text-sm font-bold uppercase tracking-wider"
@@ -46,9 +46,9 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryCardProps } from "~/../../types/landing/gallery";
+import type { GalleryCardProps } from '~/../../types/landing/gallery'
 
 defineProps<{
-  gallery: GalleryCardProps;
-}>();
+  gallery: GalleryCardProps
+}>()
 </script>

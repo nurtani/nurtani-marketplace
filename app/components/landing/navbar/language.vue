@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { locale, setLocale } = useI18n();
+import { useI18n } from 'vue-i18n'
+
+const { locale, setLocale } = useI18n()
 
 defineProps({
-  isMobile: { type: Boolean, default: false },
-});
+  isMobile: { type: Boolean, default: false }
+})
 
 // Warna tetap putih/terang karena background selalu hijau gelap
-const activeClass = "font-semibold text-white underline cursor-pointer";
-const inactiveClass =
-  "text-gray-400 cursor-pointer hover:text-white transition";
+const activeClass = 'font-semibold text-white underline cursor-pointer'
+const inactiveClass
+  = 'text-gray-400 cursor-pointer hover:text-white transition'
 </script>
 
 <template>

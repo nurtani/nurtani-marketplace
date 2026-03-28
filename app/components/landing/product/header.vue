@@ -8,8 +8,7 @@
       />
       <span
         class="text-sm font-bold tracking-[0.7px] text-[#1A4D2E] uppercase"
-        >{{ t("product.title_top") }}</span
-      >
+      >{{ t("product.title_top") }}</span>
       <NuxtImg
         src="/icon/wheat2.png"
         alt="Icon Wheat Right"
@@ -31,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
