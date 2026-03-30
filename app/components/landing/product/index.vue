@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen bg-[#F4F1E4] py-16 px-4 md:px-8 font-sans overflow-hidden"
+    class="relative min-h-screen bg-[#FFFDF5] py-16 px-4 md:px-8 overflow-hidden"
   >
     <NuxtImg
       src="/assets/backgrounds/product.png"
@@ -33,15 +33,15 @@
 </template>
 
 <script setup lang="ts">
-import { productData } from '../../../data/landing/product'
-import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
+import { productData } from "../../../data/landing/product";
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 
-const { locale } = useI18n()
-const { t } = useI18n()
+const { locale } = useI18n();
+const { t } = useI18n();
 
 const activeProduct = computed(() => {
-  const currentLang = locale.value as 'id' | 'en'
-  return productData[currentLang] || productData['id']
-})
+  const currentLang = locale.value as "id" | "en";
+  return productData[currentLang] || productData["id"];
+});
 </script>

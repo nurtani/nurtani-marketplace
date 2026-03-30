@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { challengesData } from '../../../data/landing/challenge'
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { challengesData } from "../../../data/landing/challenge";
 
-const { locale } = useI18n()
-const { t } = useI18n()
+const { locale } = useI18n();
+const { t } = useI18n();
 
 const activeChallenges = computed(() => {
-  const currentLang = locale.value as 'id' | 'en'
-  return challengesData[currentLang] || challengesData['id']
-})
+  const currentLang = locale.value as "id" | "en";
+  return challengesData[currentLang] || challengesData["id"];
+});
 </script>
 
 <template>
@@ -47,26 +47,34 @@ const activeChallenges = computed(() => {
         <div class="flex flex-col gap-8 md:gap-10">
           <LandingChallengeCard
             v-for="(item, index) in activeChallenges.filter(
-              (_, i) => i % 2 === 0
+              (_, i) => i % 2 === 0,
             )"
             :key="index"
             :title="item.title"
             :description="item.description"
             :align="index === 0 ? 'left' : 'center'"
-            :class="[index === 0 ? 'mb-14 md:mb-0' : '', 'md:self-center']"
+            :class="[
+              // 👇 Tambahkan md:ml-12 (Margin Left) khusus untuk card index 0 👇
+              index === 0 ? 'mb-14 md:mb-0 md:ml-12 lg:ml-20' : '',
+              'md:self-center',
+            ]"
           />
         </div>
 
         <div class="flex flex-col gap-8 md:gap-10 mt-[70px] md:mt-0">
           <LandingChallengeCard
             v-for="(item, index) in activeChallenges.filter(
-              (_, i) => i % 2 !== 0
+              (_, i) => i % 2 !== 0,
             )"
             :key="index"
             :title="item.title"
             :description="item.description"
             :align="index === 0 ? 'right' : 'center'"
-            :class="[index === 0 ? 'mb-2' : '', 'md:self-center']"
+            :class="[
+              // 👇 Tambahkan md:mr-12 (Margin Right) khusus untuk card index 0 👇
+              index === 0 ? 'mb-2 md:mr-12 lg:mr-20' : '',
+              'md:self-center',
+            ]"
           />
         </div>
       </div>

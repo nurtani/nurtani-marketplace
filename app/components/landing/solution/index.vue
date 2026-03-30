@@ -1,9 +1,6 @@
 <template>
-  <section class="py-16 px-4 bg-white">
-    <!-- Header -->
+  <section class="py-16 px-4 bg-[#FFFDF5]">
     <LandingSolutionHeader />
-
-    <!-- Desktop: 4-column grid -->
     <div
       class="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto"
     >
@@ -17,8 +14,6 @@
         :variant="index % 2 === 1 ? 'dark' : 'light'"
       />
     </div>
-
-    <!-- Mobile: Carousel -->
     <div class="md:hidden">
       <div
         class="overflow-hidden"
@@ -57,8 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSolutionCarousel } from '~/composables/landing/useSolutionCarousel'
+import { useSolutionCarousel } from "~/composables/landing/useSolutionCarousel";
 
-const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd }
-  = useSolutionCarousel()
+const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd } =
+  useSolutionCarousel();
 </script>

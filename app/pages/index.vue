@@ -5,5 +5,6 @@
     <LazyLandingSolution />
     <LazyLandingProduct />
     <LazyLandingGallery />
+    <LazyLandingPlatform />
   </div>
 </template>

@@ -32,8 +32,8 @@
   "challenge": {
     "header": {
       "title_top": "Tantangan",
-      "title_bottom": "Tantangan dalam Rantai Pasok Pertanian",
-      "description": "Distribusi pertanian masih memiliki kendala bagi petani dan pembeli."
+      "title_bottom": "Tantangan dalam Produk Organik",
+      "description": "Produk organik masih memiliki kendala bagi petani dan pembeli meski di negara agraris."
     },
     "caption": "Pak Yus bertani Pare di Sembung, Mengwi, Badung, Bali"
   },
@@ -53,5 +53,47 @@
     "title_bottom": "Galeri Pertanian",
     "description": "Melihat proses pertanian dan hasil panen segar dari petani lokal.",
     "button": "Lihat Semua Galeroi Pertanian"
+  },
+  "platform": {
+    "header": {
+      "title_top": "Platform",
+      "title_bottom": "Satu Sistem untuk Seluruh Ekosistem",
+      "description": "NurTani membantu mengelola dokumentasi lapangan dan bisnis dalam satu platform."
+    },
+    "card": {
+      "dashboard": {
+        "header": {
+          "title": "Dashboard Web",
+          "description": "Pantau produk, penjualan, dan rating pembeli dalam satu dashboard."
+        },
+        "content": {
+          "total": "Total Produk",
+          "sales": "Penjualan Bulan Ini",
+          "rating": "Rating"
+        }
+      },
+      "bot": {
+        "header": {
+          "title": "WhatsApp Bot",
+          "description": "Catat aktivitas pertanian semudah bertukar pesan."
+        },
+        "content": {
+          "chat_firts": "Halo! Saya mau catat penanaman tomat hari ini 🍅",
+          "chat_second": "✅ Tercatat! Aktivitas penanaman berhasil disimpan"
+        }
+      },
+      "history": {
+        "header": {
+          "title": "Riwayat Produk",
+          "description": "Dokumentasi otomatis dari penanaman ke distribusi."
+        },
+        "content": {
+          "harvest": "Panen",
+          "fertilization": "Pemupukan",
+          "maintenance": "Perawatan",
+          "plating": "Penanaman"
+        }
+      }
+    }
   }
 }

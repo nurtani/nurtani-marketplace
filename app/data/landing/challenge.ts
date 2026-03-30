@@ -1,45 +1,46 @@
-// file: data/challenges.ts
-
 export const challengesData = {
   id: [
     {
-      title: 'Ketergantungan pada Perantara',
+      title: "Harga Tidak Terjangkau",
       description:
-        'Petani sering bergantung pada tengkulak sehingga harga jual lebih rendah.'
+        "Pembeli membeli dengan harga yang fantastis meski hidup dalam wilayah agraris.",
     },
     {
-      title: 'Sulit Mengetahui Asal Produk',
+      title: "Sulit mengakses Produk Organik",
       description:
-        'Pembeli tidak memiliki informasi jelas mengenai asal produk.'
+        "Keterbatasan akses bagi Pembeli dan Petani dalam jual-beli produk organik.",
     },
     {
-      title: 'Ketiadaan Riwayat Budidaya',
-      description: 'Ketiadaan riwayat budidaya sehingga sulit dilacak.'
+      title: "Birokrasi yang Tidak Ramah Petani",
+      description:
+        "Petani sangat ingin mengadopsi kembali pertanian organik seperti sediakala namun terhalang birokrasi dan industri.",
     },
     {
-      title: 'Distribusi yang Tidak Efisien',
-      description: 'Rantai distribusi panjang membuat harga produk meningkat.'
-    }
+      title: "Pola Konsumsi yang Belum Bertanggungjawab",
+      description:
+        "Masyarakat masih terbelenggu produk industri yang mengakibatkan Petani kesulitan memproduksi produk organik.",
+    },
   ],
   en: [
     {
-      title: 'Dependency on Intermediaries',
+      title: "Unaffordable Prices",
       description:
-        'Farmers often rely on middlemen, resulting in lower selling prices.'
+        "Consumers buy at exorbitant prices despite living in an agrarian region.",
     },
     {
-      title: 'Difficulty Tracing Product Origin',
+      title: "Limited Access to Organic Products",
       description:
-        'Buyers lack clear information regarding the origin of the products.'
+        "Restricted access for both consumers and farmers in trading organic goods.",
     },
     {
-      title: 'Lack of Cultivation History',
+      title: "Farmer-Unfriendly Bureaucracy",
       description:
-        'The absence of cultivation history makes tracking difficult.'
+        "Farmers strongly desire to return to organic farming but are hindered by bureaucracy and industry.",
     },
     {
-      title: 'Inefficient Distribution',
-      description: 'A long distribution chain increases product prices.'
-    }
-  ]
-}
+      title: "Unsustainable Consumption Patterns",
+      description:
+        "Society remains tied to industrial products, making it difficult for farmers to produce organic goods.",
+    },
+  ],
+};

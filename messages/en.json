@@ -32,8 +32,8 @@
   "challenge": {
     "header": {
       "title_top": "Challenge",
-      "title_bottom": "Challenges in the Agricultural Supply Chain",
-      "description": "Agricultural distribution still poses challenges for farmers and buyers."
+      "title_bottom": "Challenges in Organic Products",
+      "description": "Organic products still face challenges for farmers and consumers, even in an agricultural country."
     },
     "caption": "Mr. Yus grows bitter melon in Sembung, Mengwi, Badung, Bali"
   },
@@ -53,5 +53,47 @@
     "title_bottom": "Agriculture Gallery",
     "description": "See the farming process and fresh produce from local farmers.",
     "button": "View All Agriculture Galleries"
+  },
+  "platform": {
+    "header": {
+      "title_top": "Platform",
+      "title_bottom": "One System for the Entire Ecosystem",
+      "description": "NurTani helps manage field and business documentation in one single platform."
+    },
+    "card": {
+      "dashboard": {
+        "header": {
+          "title": "Web Dashboard",
+          "description": "Monitor products, sales, and buyer ratings all in one dashboard."
+        },
+        "content": {
+          "total": "Total Products",
+          "sales": "This Month's Sales",
+          "rating": "Rating"
+        }
+      },
+      "bot": {
+        "header": {
+          "title": "WhatsApp Bot",
+          "description": "Record farming activities as easily as exchanging messages."
+        },
+        "content": {
+          "chat_firts": "Hi! I want to log my tomato planting today 🍅",
+          "chat_second": "✅ Logged! Planting activity saved successfully"
+        }
+      },
+      "history": {
+        "header": {
+          "title": "Product History",
+          "description": "Automated documentation from planting to distribution."
+        },
+        "content": {
+          "harvest": "Harvest",
+          "fertilization": "Fertilization",
+          "maintenance": "Maintenance",
+          "plating": "Planting"
+        }
+      }
+    }
   }
 }

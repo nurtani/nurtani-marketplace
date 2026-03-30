@@ -1,10 +1,10 @@
 <template>
   <div
     :class="[
-      'rounded-2xl p-6 border flex flex-col gap-4',
+      'rounded-2xl p-6 flex flex-col gap-4',
       variant === 'dark'
         ? 'bg-[linear-gradient(135deg,#1A4D2E_0%,#008236_100%)] text-white border-[#1a4731]'
-        : 'bg-white text-[#1a4731] border-[linear-gradient(135deg,#1A4D2E_0%,#008236_100%)] shadow-sm'
+        : 'bg-white text-[#1a4731] shadow-sm',
     ]"
   >
     <!-- Icon + Number row -->
@@ -15,7 +15,7 @@
           mobile ? 'w-16 h-16 rounded-2xl' : 'w-12 h-12',
           variant === 'dark'
             ? 'bg-white/20'
-            : 'bg-[linear-gradient(135deg,#1A4D2E_0%,#008236_100%)]'
+            : 'bg-[linear-gradient(135deg,#1A4D2E_0%,#008236_100%)]',
         ]"
       >
         <NuxtImg
@@ -28,9 +28,10 @@
         :class="[
           'font-extrabold leading-none',
           mobile ? 'text-5xl' : 'text-4xl',
-          variant === 'dark' ? 'text-white' : 'text-[#1a4731]'
+          variant === 'dark' ? 'text-white' : 'text-[#1a4731]',
         ]"
-      >{{ number }}</span>
+        >{{ number }}</span
+      >
     </div>
 
     <!-- Text -->
@@ -39,7 +40,7 @@
         :class="[
           'font-bold mb-2',
           mobile ? 'text-lg' : 'text-base',
-          variant === 'dark' ? 'text-white' : 'text-[#1a4731]'
+          variant === 'dark' ? 'text-white' : 'text-[#1a4731]',
         ]"
       >
         {{ title }}
@@ -47,7 +48,7 @@
       <p
         :class="[
           'text-sm leading-relaxed',
-          variant === 'dark' ? 'text-white/80' : 'text-gray-500'
+          variant === 'dark' ? 'text-white/80' : 'text-gray-500',
         ]"
       >
         {{ description }}
@@ -57,10 +58,10 @@
 </template>
 
 <script setup lang="ts">
-import type { SolutionCardProps } from '../../../../types/landing/solution'
+import type { SolutionCardProps } from "../../../../types/landing/solution";
 
 withDefaults(defineProps<SolutionCardProps>(), {
-  variant: 'light',
-  mobile: false
-})
+  variant: "light",
+  mobile: false,
+});
 </script>

@@ -5,7 +5,7 @@
       :key="index"
       :class="[
         'rounded-full transition-all duration-300 cursor-pointer w-4 h-4',
-        modelValue === index ? activeClass : inactiveClass
+        modelValue === index ? activeClass : inactiveClass,
       ]"
       :aria-label="`Go to slide ${index + 1}`"
       @click="emit('update:modelValue', index)"
@@ -14,14 +14,14 @@
 </template>
 
 <script setup lang="ts">
-import type { DotProps } from '~/../../types/landing/dot'
+import type { DotProps } from "~/../../types/landing/dot";
 
 withDefaults(defineProps<DotProps>(), {
-  activeClass: 'bg-[#FFFFFF]',
-  inactiveClass: 'bg-gray-300 hover:bg-gray-400'
-})
+  activeClass: "bg-[#FFFFFF]",
+  inactiveClass: "bg-gray-300 hover:bg-gray-400",
+});
 
 const emit = defineEmits<{
-  'update:modelValue': [index: number]
-}>()
+  "update:modelValue": [index: number];
+}>();
 </script>
