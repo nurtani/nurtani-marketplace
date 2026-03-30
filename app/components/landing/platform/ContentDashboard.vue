@@ -18,7 +18,7 @@
 
     <div class="flex items-center justify-between">
       <span class="text-[#4A5565] leading-5">{{
-        t("platform.card.dashboard.rating")
+        t("platform.card.dashboard.content.rating")
       }}</span>
       <div class="flex items-center gap-1 text-lg font-medium text-[#F0B100]">
         <span>4.8</span>
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
