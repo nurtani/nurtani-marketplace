@@ -33,15 +33,15 @@
 </template>
 
 <script setup lang="ts">
-import { productData } from "../../../data/landing/product";
-import { useI18n } from "vue-i18n";
-import { computed } from "vue";
+import { productData } from '../../../data/landing/product'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
-const { locale } = useI18n();
-const { t } = useI18n();
+const { locale } = useI18n()
+const { t } = useI18n()
 
 const activeProduct = computed(() => {
-  const currentLang = locale.value as "id" | "en";
-  return productData[currentLang] || productData["id"];
-});
+  const currentLang = locale.value as 'id' | 'en'
+  return productData[currentLang] || productData['id']
+})
 </script>

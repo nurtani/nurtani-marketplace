@@ -4,8 +4,8 @@
     <div class="overflow-hidden md:overflow-visible">
       <section
         ref="sliderRef"
-        @scroll="handleScroll"
         class="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 hide-scrollbar px-[10vw] md:px-0 -mx-[10vw] md:mx-0 w-[calc(100%+20vw)] md:w-full"
+        @scroll="handleScroll"
       >
         <div
           class="w-[78vw] md:w-full shrink-0 snap-center snap-always md:snap-align-none flex"
@@ -49,21 +49,21 @@
       class="md:hidden mt-3"
       :count="3"
       :model-value="activeIndex"
-      @update:model-value="handleDotClick"
       active-class="bg-[#1A4D2E]"
       inactive-class="bg-[#D1D5DB] opacity-70"
+      @update:model-value="handleDotClick"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { usePlatformCarousel } from "~/composables/landing/usePlatformCarousel";
-import { useI18n } from "vue-i18n";
+import { usePlatformCarousel } from '~/composables/landing/usePlatformCarousel'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
-const { sliderRef, handleScroll, handleDotClick, activeIndex } =
-  usePlatformCarousel();
+const { sliderRef, handleScroll, handleDotClick, activeIndex }
+  = usePlatformCarousel()
 </script>
 
 <style scoped>

@@ -11,8 +11,12 @@
       preload
     />
 
-    <h3 class="mb-4 text-2xl font-bold text-[#1A4D2E]">{{ title }}</h3>
-    <p class="mb-4 text-[#4A5565] text-[16px]">{{ description }}</p>
+    <h3 class="mb-4 text-2xl font-bold text-[#1A4D2E]">
+      {{ title }}
+    </h3>
+    <p class="mb-4 text-[#4A5565] text-[16px]">
+      {{ description }}
+    </p>
 
     <div class="w-full">
       <slot />
@@ -22,8 +26,8 @@
 
 <script setup lang="ts">
 defineProps<{
-  title: string;
-  description: string;
-  image: string;
-}>();
+  title: string
+  description: string
+  image: string
+}>()
 </script>

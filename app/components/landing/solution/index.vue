@@ -52,8 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSolutionCarousel } from "~/composables/landing/useSolutionCarousel";
+import { useSolutionCarousel } from '~/composables/landing/useSolutionCarousel'
 
-const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd } =
-  useSolutionCarousel();
+const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd }
+  = useSolutionCarousel()
 </script>
