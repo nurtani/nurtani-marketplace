@@ -36,7 +36,7 @@ const positionClass = computed(() => {
   >
     <div class="flex items-center gap-x-2 md:gap-x-4">
       <div
-        class="flex items-center justify-center shrink-0 w-8 h-8 md:w-[56px] md:h-[56px] rounded-lg md:rounded-[12px] bg-[#305846]/40"
+        class="flex items-center justify-center shrink-0 w-8 h-8 md:w-[56px] md:h-[56px] rounded-lg md:rounded-[12px] bg-[#FACC15]/65"
       >
         <NuxtImg
           :src="icon || '/assets/challenge/1.png'"

@@ -95,5 +95,41 @@
         }
       }
     }
+  },
+  "green": {
+    "header": {
+      "title_top": "GREEN FLAG POINT",
+      "title_bottom": "What is Green Flag Point?",
+      "description": "Points that showcase your contribution to organic production and consumption."
+    },
+    "card": {
+      "left": {
+        "label": {
+          "1": "Active Users",
+          "2": "Total Points",
+          "3": "Farmers Assisted",
+          "4": "CO2 Saved"
+        }
+      },
+      "right": {
+        "leaf": {
+          "title": "Sustainable Production",
+          "description": "Points for every harvest produced using organic methods."
+        },
+        "cart": {
+          "title": "Responsible Consumption",
+          "description": "Support by purchasing local products with green certification."
+        },
+        "community": {
+          "title": "Community Impact",
+          "description": "Earn extra points by supporting young farmer education."
+        },
+        "trophy": {
+          "title": "Monthly Competition",
+          "description": "A chance to win the grand prize at the end of every month."
+        }
+      },
+      "button": "View Leaderboard"
+    }
   }
 }

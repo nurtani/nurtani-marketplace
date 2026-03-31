@@ -95,5 +95,41 @@
         }
       }
     }
+  },
+  "green": {
+    "header": {
+      "title_top": "GREEN FLAG POINT",
+      "title_bottom": "Apa Itu Green Flag Point?",
+      "description": "Poin yang menunjukkan kontribusi Anda pada produksi dan konsumsi organik."
+    },
+    "card": {
+      "left": {
+        "label": {
+          "1": "Pengguna Aktif",
+          "2": "Total Poin",
+          "3": "Petani Terbantu",
+          "4": "CO2 Diselamatkan"
+        }
+      },
+      "right": {
+        "leaf": {
+          "title": "Produksi Berkelanjutan",
+          "description": "Poin untuk setiap hasil panen yang menggunakan metode organik."
+        },
+        "cart": {
+          "title": "Konsumsi Bertanggung Jawab",
+          "description": "Dukungan belanja produk lokal dengan sertifikasi hijau."
+        },
+        "community": {
+          "title": "Dampak Komunitas",
+          "description": "Kumpulkan poin ekstra saat membantu edukasi petani muda."
+        },
+        "trophy": {
+          "title": "Kompetisi Bulanan",
+          "description": "Kesempatan memenangkan grand prize setiap akhir bulan."
+        }
+      },
+      "button": "Lihat Leaderboard"
+    }
   }
 }

@@ -6,5 +6,6 @@
     <LazyLandingProduct />
     <LazyLandingGallery />
     <LazyLandingPlatform />
+    <LazyLandingGreenFlag />
   </div>
 </template>

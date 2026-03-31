@@ -58,6 +58,7 @@ const activeChallenges = computed(() => {
               index === 0 ? 'mb-14 md:mb-0 md:ml-12 lg:ml-20' : '',
               'md:self-center'
             ]"
+            :icon="item.icon"
           />
         </div>
 
@@ -75,6 +76,7 @@ const activeChallenges = computed(() => {
               index === 0 ? 'mb-2 md:mr-12 lg:mr-20' : '',
               'md:self-center'
             ]"
+            :icon="item.icon"
           />
         </div>
       </div>
