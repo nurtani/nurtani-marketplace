@@ -15,8 +15,8 @@
       "title_top": "Healthy Upstream,",
       "title_bottom": "Happy Downstream",
       "description": "NurTani maintains the authenticity of the process from production to consumption transparently, ensuring our nature is preserved for future happiness.",
-      "btn_market": "View Market",
-      "btn_join": "Join Now"
+      "btn_market": "Join Us!",
+      "btn_join": "Let's Shop!"
     },
     "visual": {
       "farmer_name": "Mr. Budi",
@@ -24,7 +24,7 @@
       "stats_number": "10k+",
       "stats_label": "Green Flag People",
       "feature_title": "100% Organic",
-      "feature_desc": "Grown naturally by farmers who truly care for nature.",
+      "feature_desc": "GA natural way of life, thanks to farmers who care for the environment.",
       "alt_farmer": "Mr. Budi - Organic Chili Farmer",
       "alt_product": "Organic Sprouts and Vegetables"
     }
@@ -40,7 +40,7 @@
   "solution": {
     "title_top": "Our Solutions",
     "title_bottom": "How NurTani Addresses This Issue",
-    "description": "NurTani connects farmers directly with buyers through product transparency."
+    "description": "NurTani helps farmers maintain the integrity of their products in a transparent manner."
   },
   "product": {
     "title_top": "Our Products",
@@ -100,14 +100,14 @@
     "header": {
       "title_top": "GREEN FLAG POINT",
       "title_bottom": "What is Green Flag Point?",
-      "description": "Points that showcase your contribution to organic production and consumption."
+      "description": "Points that demonstrate your contribution to a sustainable lifestyle."
     },
     "card": {
       "left": {
         "label": {
-          "1": "Active Users",
+          "1": "Green Flag Users",
           "2": "Total Points",
-          "3": "Farmers Assisted",
+          "3": "Regenerated Land",
           "4": "CO2 Saved"
         }
       },
@@ -130,6 +130,13 @@
         }
       },
       "button": "View Leaderboard"
+    }
+  },
+  "ready": {
+    "header": {
+      "title_top": "READY TO JOIN",
+      "title_bottom": "Ready to Join NurTani?",
+      "description": "Join a regenerative agriculture ecosystem that is transparent and fair for both the economy and ecology."
     }
   }
 }

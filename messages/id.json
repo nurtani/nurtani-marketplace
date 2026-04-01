@@ -15,8 +15,8 @@
       "title_top": "Hulu Sehat,",
       "title_bottom": "Hilir Bahagia",
       "description": "NurTani menjaga keaslian proses produksi sampai konsumsi secara terbuka agar alam kita tetap terjaga untuk kebahagiaan selanjutnya.",
-      "btn_market": "Lihat Pasar",
-      "btn_join": "Gabung sekarang"
+      "btn_market": "Yuk Gabung!",
+      "btn_join": "Yuk Belanja!"
     },
     "visual": {
       "farmer_name": "Pak Budi",
@@ -24,7 +24,7 @@
       "stats_number": "10rb+",
       "stats_label": "Orang Green Flag",
       "feature_title": "100% Organik",
-      "feature_desc": "Tumbuh asli berkat Petani yang sayang alam.",
+      "feature_desc": "Hidup alami berkat Petani yang sayang alam.",
       "alt_farmer": "Pak Budi - Petani Cabai Organik",
       "alt_product": "Organik Sprouts dan Sayuran"
     }
@@ -40,7 +40,7 @@
   "solution": {
     "title_top": "Solusi Kami",
     "title_bottom": "Bagaimana NurTani Mengatasi Masalah Ini",
-    "description": "NurTani menghubungkan petani langsung dengan pembeli melalui transparansi produk."
+    "description": "NurTani membantu Petani untuk menjaga integritas produknya secara transparan."
   },
   "product": {
     "title_top": "Produk Kami",
@@ -100,7 +100,7 @@
     "header": {
       "title_top": "GREEN FLAG POINT",
       "title_bottom": "Apa Itu Green Flag Point?",
-      "description": "Poin yang menunjukkan kontribusi Anda pada produksi dan konsumsi organik."
+      "description": "Poin yang menunjukkan kontribusi Anda pada pola hidup berkelanjutan."
     },
     "card": {
       "left": {
@@ -130,6 +130,13 @@
         }
       },
       "button": "Lihat Leaderboard"
+    }
+  },
+  "ready": {
+    "header": {
+      "title_top": "SIAP BERGABUNG",
+      "title_bottom": "Siap Bergabung dengan NurTani?",
+      "description": "Ayo gabung dalam ekosistem pertanian regeneratif yang transparan dan adil untuk ekonomi dan ekologi."
     }
   }
 }

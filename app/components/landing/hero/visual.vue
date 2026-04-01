@@ -1,7 +1,24 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
+import { useAutoCarousel } from "~/composables/landing/useHeroCarousel";
+import { farmerImages, productImages } from "~/data/landing/hero"; // sesuaikan path file dummy
 
-const { t } = useI18n()
+const { t } = useI18n();
+
+const { currentIndex: farmerIndex } = useAutoCarousel(
+  farmerImages.length,
+  3000,
+  0,
+);
+const { currentIndex: productIndex } = useAutoCarousel(
+  productImages.length,
+  3000,
+  1500,
+);
+
+const activeFarmer = computed(
+  () => (farmerImages[farmerIndex.value] ?? farmerImages[0])!,
+);
 </script>
 
 <template>
@@ -12,22 +29,28 @@ const { t } = useI18n()
           class="h-[350px] grid rounded-2xl md:rounded-3xl overflow-hidden shadow-xl group aspect-[3/4]"
         >
           <NuxtImg
-            src="/assets/picture/pakbudi.png"
-            :alt="t('hero.visual.alt_farmer')"
-            class="col-start-1 row-start-1 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            v-for="(img, i) in farmerImages"
+            :key="img.src"
+            :src="img.src"
+            :alt="img.alt"
+            class="col-start-1 row-start-1 w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+            :class="
+              i === farmerIndex
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-105'
+            "
             format="webp"
             fit="cover"
             preload
           />
           <div
-            class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-6 md:pb-8 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
+            class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-4 md:pb-22 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
           >
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
-              {{ t("hero.visual.farmer_name") }} –<br class="md:hidden">
-              {{ t("hero.visual.farmer_role").split(" ")[0] }}
+              {{ activeFarmer.name }} –
             </p>
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
-              {{ t("hero.visual.farmer_role").split(" ").slice(1).join(" ") }}
+              {{ activeFarmer.role }}
             </p>
           </div>
         </div>
@@ -57,23 +80,29 @@ const { t } = useI18n()
               class="w-auto h-auto max-h-full"
             />
           </div>
-
           <h4 class="text-[20px] font-extrabold leading-tight">
             {{ t("hero.visual.feature_title") }}
           </h4>
-
           <p class="text-[14px] text-[#6B7280] font-medium leading-relaxed">
             {{ t("hero.visual.feature_desc") }}
           </p>
         </div>
 
+        <!-- Product Carousel -->
         <div
-          class="h-[350px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/10 group"
+          class="relative h-[350px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/10 group"
         >
           <NuxtImg
-            src="/assets/picture/product.png"
-            :alt="t('hero.visual.alt_product')"
-            class="w-full h-full object-cover aspect-[4/5] transition-transform duration-500 group-hover:scale-105"
+            v-for="(img, i) in productImages"
+            :key="img.src"
+            :src="img.src"
+            :alt="img.alt"
+            class="absolute inset-0 w-full h-full object-cover aspect-[4/5] transition-all duration-700 group-hover:scale-105"
+            :class="
+              i === productIndex
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-105'
+            "
             format="webp"
             fit="cover"
             preload
