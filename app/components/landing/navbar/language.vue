@@ -7,7 +7,6 @@ defineProps({
   isMobile: { type: Boolean, default: false }
 })
 
-// Warna tetap putih/terang karena background selalu hijau gelap
 const activeClass = 'font-semibold text-white underline cursor-pointer'
 const inactiveClass
   = 'text-gray-400 cursor-pointer hover:text-white transition'

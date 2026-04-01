@@ -140,8 +140,26 @@
     }
   },
   "footer": {
-    "brand": "One system for the entire agricultural ecosystem that is transparent and fair.",
+    "brand": "A single system for the entire agricultural ecosystem that is transparent and fair",
     "copyright1": "NurTani. All rights reserved. Made with",
-    "copyright2": "for Indonesian farmers."
+    "copyright2": "for Indonesian farmers.",
+    "link": {
+      "companyTitle": "Company",
+      "platformTitle": "Platform",
+      "companyLinks": {
+        "home": "Home",
+        "solutions": "Our Solutions",
+        "products": "Our Products",
+        "gallery": "Gallery",
+        "platform": "Platform"
+      },
+      "platformLinks": {
+        "farmers": "For Farmers",
+        "buyers": "For Buyers",
+        "waBot": "WhatsApp Bot",
+        "webDashboard": "Web Dashboard",
+        "blockchain": "Blockchain Certification"
+      }
+    }
   }
 }

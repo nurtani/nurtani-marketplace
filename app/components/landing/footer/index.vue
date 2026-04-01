@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { getCompanyLinks, getPlatformLinks } from '~/data/landing/link'
 
 const { t } = useI18n()
-
-// Gunakan computed untuk mengaktifkan reaktivitas i18n
 const companyLinks = computed(() => getCompanyLinks(t))
 const platformLinks = computed(() => getPlatformLinks(t))
 </script>

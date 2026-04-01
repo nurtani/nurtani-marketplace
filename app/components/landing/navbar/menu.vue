@@ -17,10 +17,24 @@ defineProps({
         : 'hidden md:flex gap-8 font-medium'
     "
   >
-    <NuxtLink :to="localePath('/')">{{ t("nav.home") }}</NuxtLink>
-    <NuxtLink :to="localePath('/solusi')">{{ t("nav.solution") }}</NuxtLink>
-    <NuxtLink :to="localePath('/produk')">{{ t("nav.product") }}</NuxtLink>
-    <NuxtLink :to="localePath('/galeri')">{{ t("nav.gallery") }}</NuxtLink>
-    <NuxtLink :to="localePath('/platform')">{{ t("nav.platform") }}</NuxtLink>
+    <NuxtLink :to="localePath({ path: '/', hash: '#home' })">
+      {{ t("nav.home") }}
+    </NuxtLink>
+
+    <NuxtLink :to="localePath({ path: '/', hash: '#solusi' })">
+      {{ t("nav.solution") }}
+    </NuxtLink>
+
+    <NuxtLink :to="localePath({ path: '/', hash: '#produk' })">
+      {{ t("nav.product") }}
+    </NuxtLink>
+
+    <NuxtLink :to="localePath({ path: '/', hash: '#galeri' })">
+      {{ t("nav.gallery") }}
+    </NuxtLink>
+
+    <NuxtLink :to="localePath({ path: '/', hash: '#platform' })">
+      {{ t("nav.platform") }}
+    </NuxtLink>
   </nav>
 </template>

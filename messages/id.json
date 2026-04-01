@@ -142,6 +142,24 @@
   "footer": {
     "brand": "Satu sistem untuk seluruh ekosistem pertanian yang transparan dan adil",
     "copyright1": "NurTani. Hak cipta dilindungi. Dibuat dengan",
-    "copyright2": "untuk petani Indonesia."
+    "copyright2": "untuk petani Indonesia.",
+    "link": {
+      "companyTitle": "Perusahaan",
+      "platformTitle": "Platform",
+      "companyLinks": {
+        "home": "Beranda",
+        "solutions": "Solusi Kami",
+        "products": "Produk Kami",
+        "gallery": "Galeri",
+        "platform": "Platform"
+      },
+      "platformLinks": {
+        "farmers": "Untuk Petani",
+        "buyers": "Untuk Pembeli",
+        "waBot": "Bot WhatsApp",
+        "webDashboard": "Dasbor Web",
+        "blockchain": "Sertifikasi Blockchain"
+      }
+    }
   }
 }
