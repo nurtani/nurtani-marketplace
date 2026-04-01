@@ -118,15 +118,15 @@
         },
         "cart": {
           "title": "Konsumsi Bertanggung Jawab",
-          "description": "Dukungan belanja produk lokal dengan sertifikasi hijau."
+          "description": "Dukungan belanja produk lokal dengan praktik hijau nyata."
         },
         "community": {
           "title": "Dampak Komunitas",
-          "description": "Kumpulkan poin ekstra saat membantu edukasi petani muda."
+          "description": "Memperkuat hubungan masyarakat dengan alam."
         },
         "trophy": {
-          "title": "Kompetisi Bulanan",
-          "description": "Kesempatan memenangkan grand prize setiap akhir bulan."
+          "title": "Si Paling Green Flag",
+          "description": "Jadilah Si Paling Green Flag beserta apresiasinya."
         }
       },
       "button": "Lihat Leaderboard"

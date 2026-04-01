@@ -118,15 +118,15 @@
         },
         "cart": {
           "title": "Responsible Consumption",
-          "description": "Support by purchasing local products with green certification."
+          "description": "Support for purchasing local products through concrete eco-friendly practices."
         },
         "community": {
           "title": "Community Impact",
-          "description": "Earn extra points by supporting young farmer education."
+          "description": "Strengthening the connection between people and nature."
         },
         "trophy": {
-          "title": "Monthly Competition",
-          "description": "A chance to win the grand prize at the end of every month."
+          "title": "The Greenest One",
+          "description": "Be the “Greenest” and receive your recognition."
         }
       },
       "button": "View Leaderboard"
