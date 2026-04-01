@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { useAutoCarousel } from "~/composables/landing/useHeroCarousel";
-import { farmerImages, productImages } from "~/data/landing/hero"; // sesuaikan path file dummy
+import { useI18n } from 'vue-i18n'
+import { useAutoCarousel } from '~/composables/landing/useHeroCarousel'
+import { farmerImages, productImages } from '~/data/landing/hero' // sesuaikan path file dummy
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const { currentIndex: farmerIndex } = useAutoCarousel(
   farmerImages.length,
   3000,
-  0,
-);
+  0
+)
 const { currentIndex: productIndex } = useAutoCarousel(
   productImages.length,
   3000,
-  1500,
-);
+  1500
+)
 
 const activeFarmer = computed(
-  () => (farmerImages[farmerIndex.value] ?? farmerImages[0])!,
-);
+  () => (farmerImages[farmerIndex.value] ?? farmerImages[0])!
+)
 </script>
 
 <template>

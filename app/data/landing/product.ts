@@ -3,125 +3,125 @@ export const productData = {
   id: [
     {
       id: 1,
-      image: "/assets/product/1.jpeg",
+      image: '/assets/product/1.jpeg',
       isFavorite: true,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Markisa Segar",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Markisa Segar',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 2,
-      image: "/assets/product/2.jpeg",
+      image: '/assets/product/2.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Terong Organik",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Terong Organik',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 3,
-      image: "/assets/product/3.jpeg",
+      image: '/assets/product/3.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Cabai Organik",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Cabai Organik',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
+      priceLabel: 'Harga per Kg',
+      price: 18500
     },
     {
       id: 4,
-      image: "/assets/product/4.jpeg",
+      image: '/assets/product/4.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, JAWA BARAT",
-      title: "Nanas Segar",
+      location: 'CIANJUR, JAWA BARAT',
+      title: 'Nanas Segar',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Harga per Kg",
-      price: 18500,
-    },
+      priceLabel: 'Harga per Kg',
+      price: 18500
+    }
   ],
   en: [
     {
       id: 1,
-      image: "/assets/product/1.jpeg",
+      image: '/assets/product/1.jpeg',
       isFavorite: true,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Fresh Passion Fruit",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Fresh Passion Fruit',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 2,
-      image: "/assets/product/2.jpeg",
+      image: '/assets/product/2.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Organic Eggplant",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Organic Eggplant',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 3,
-      image: "/assets/product/3.jpeg",
+      image: '/assets/product/3.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Organic Chili Peppers",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Organic Chili Peppers',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
+      priceLabel: 'Price per Kg',
+      price: 18500
     },
     {
       id: 4,
-      image: "/assets/product/4.jpeg",
+      image: '/assets/product/4.jpeg',
       isFavorite: false,
       isVerified: true,
-      location: "CIANJUR, WEST JAVA",
-      title: "Fresh Pineapple",
+      location: 'CIANJUR, WEST JAVA',
+      title: 'Fresh Pineapple',
       seller: {
-        name: "Pak Budi Santoso",
-        avatar: "/assets/picture/pakbudi.png",
+        name: 'Pak Budi Santoso',
+        avatar: '/assets/picture/pakbudi.png'
       },
       points: 120,
-      priceLabel: "Price per Kg",
-      price: 18500,
-    },
-  ],
-};
+      priceLabel: 'Price per Kg',
+      price: 18500
+    }
+  ]
+}

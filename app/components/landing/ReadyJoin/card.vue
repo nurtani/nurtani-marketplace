@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import type { ReadyCardProps } from "~/../../types/landing/ready";
-import { readyData } from "~/data/landing/ready";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import type { ReadyCardProps } from '~/../../types/landing/ready'
+import { readyData } from '~/data/landing/ready'
 
-const { locale } = useI18n();
-const props = defineProps<ReadyCardProps>();
+const { locale } = useI18n()
+const props = defineProps<ReadyCardProps>()
 
 const cardData = computed(() => {
-  const currentData =
-    readyData[locale.value as keyof typeof readyData] || readyData.id;
+  const currentData
+    = readyData[locale.value as keyof typeof readyData] || readyData.id
 
   return {
     bgImage: props.bgImage ?? currentData.bgImage,
@@ -19,9 +19,9 @@ const cardData = computed(() => {
     primaryCtaText: props.primaryCtaText ?? currentData.primaryCtaText,
     primaryCtaUrl: props.primaryCtaUrl ?? currentData.primaryCtaUrl,
     secondaryCtaText: props.secondaryCtaText ?? currentData.secondaryCtaText,
-    secondaryCtaUrl: props.secondaryCtaUrl ?? currentData.secondaryCtaUrl,
-  };
-});
+    secondaryCtaUrl: props.secondaryCtaUrl ?? currentData.secondaryCtaUrl
+  }
+})
 </script>
 
 <template>
@@ -48,7 +48,7 @@ const cardData = computed(() => {
           rgba(0, 0, 0, 0.75) 100%
         );
       "
-    ></div>
+    />
 
     <div class="relative z-20 flex flex-col items-center gap-4 md:gap-5 w-full">
       <NuxtImg
@@ -87,8 +87,8 @@ const cardData = computed(() => {
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
           </svg>
         </NuxtLink>
 
