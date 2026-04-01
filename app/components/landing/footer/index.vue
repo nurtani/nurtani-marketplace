@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { getCompanyLinks, getPlatformLinks } from "~/data/landing/link";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { getCompanyLinks, getPlatformLinks } from '~/data/landing/link'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 // Gunakan computed untuk mengaktifkan reaktivitas i18n
-const companyLinks = computed(() => getCompanyLinks(t));
-const platformLinks = computed(() => getPlatformLinks(t));
+const companyLinks = computed(() => getCompanyLinks(t))
+const platformLinks = computed(() => getPlatformLinks(t))
 </script>
 
 <template>
@@ -20,9 +20,15 @@ const platformLinks = computed(() => getPlatformLinks(t));
       >
         <LandingFooterBrand />
 
-        <LandingFooterLinks title="Perusahaan" :links="companyLinks" />
+        <LandingFooterLinks
+          title="Perusahaan"
+          :links="companyLinks"
+        />
 
-        <LandingFooterLinks title="Platform" :links="platformLinks" />
+        <LandingFooterLinks
+          title="Platform"
+          :links="platformLinks"
+        />
 
         <LandingFooterContact />
       </div>

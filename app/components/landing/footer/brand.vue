@@ -42,8 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import { socialMedia } from "~/data/landing/sosmed";
-import { useI18n } from "vue-i18n";
+import { socialMedia } from '~/data/landing/sosmed'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>

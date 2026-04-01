@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col gap-y-4">
-    <h4 class="text-white font-bold text-lg md:text-xl mb-2">Hubungi Kami</h4>
+    <h4 class="text-white font-bold text-lg md:text-xl mb-2">
+      Hubungi Kami
+    </h4>
 
     <div class="flex flex-col gap-y-5">
       <div class="flex items-start gap-x-3 group">
@@ -12,9 +14,7 @@
           height="20"
         />
         <div class="flex flex-col">
-          <span class="text-white font-semibold text-sm md:text-base"
-            >Email</span
-          >
+          <span class="text-white font-semibold text-sm md:text-base">Email</span>
           <a
             href="mailto:hello@nurtani.com"
             class="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 mt-0.5"
@@ -33,9 +33,7 @@
           height="20"
         />
         <div class="flex flex-col">
-          <span class="text-white font-semibold text-sm md:text-base"
-            >Telepon</span
-          >
+          <span class="text-white font-semibold text-sm md:text-base">Telepon</span>
           <a
             href="tel:+6281234567890"
             class="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 mt-0.5"
@@ -54,9 +52,7 @@
           height="20"
         />
         <div class="flex flex-col">
-          <span class="text-white font-semibold text-sm md:text-base"
-            >Alamat</span
-          >
+          <span class="text-white font-semibold text-sm md:text-base">Alamat</span>
           <p class="text-white/80 text-sm md:text-base mt-0.5 leading-relaxed">
             Jakarta, Indonesia
           </p>

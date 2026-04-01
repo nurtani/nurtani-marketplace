@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { LinkItem } from "~/../../types/landing/footer";
+import type { LinkItem } from '~/../../types/landing/footer'
+
 defineProps<{
-  title: string;
-  links: LinkItem[];
-}>();
+  title: string
+  links: LinkItem[]
+}>()
 </script>
 
 <template>
