@@ -19,6 +19,14 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        class: 'scroll-smooth',
+        lang: 'id'
+      }
+    }
+  },
 
   css: ['~/assets/css/main.css'],
 
