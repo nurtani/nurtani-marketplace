@@ -52,7 +52,7 @@
     "title_top": "Galeri",
     "title_bottom": "Galeri Pertanian",
     "description": "Melihat proses pertanian dan hasil panen segar dari petani lokal.",
-    "button": "Lihat Semua Galeroi Pertanian"
+    "button": "Lihat Semua Galeri Pertanian"
   },
   "platform": {
     "header": {
@@ -105,9 +105,9 @@
     "card": {
       "left": {
         "label": {
-          "1": "Pengguna Aktif",
+          "1": "Orang Green Flag",
           "2": "Total Poin",
-          "3": "Petani Terbantu",
+          "3": "Lahan Teregenerasi",
           "4": "CO2 Diselamatkan"
         }
       },
