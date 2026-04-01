@@ -4,6 +4,7 @@
       id="home"
       class="scroll-mt-20"
     />
+    <LazyLandingChallenge />
     <LazyLandingSolution
       id="solusi"
       class="scroll-mt-20"
@@ -20,7 +21,6 @@
       id="platform"
       class="scroll-mt-20"
     />
-    <LazyLandingChallenge />
     <LazyLandingGreenFlag />
     <LazyLandingReadyJoin />
   </div>
