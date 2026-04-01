@@ -138,5 +138,10 @@
       "title_bottom": "Ready to Join NurTani?",
       "description": "Join a regenerative agriculture ecosystem that is transparent and fair for both the economy and ecology."
     }
+  },
+  "footer": {
+    "brand": "One system for the entire agricultural ecosystem that is transparent and fair.",
+    "copyright1": "NurTani. All rights reserved. Made with",
+    "copyright2": "for Indonesian farmers."
   }
 }
