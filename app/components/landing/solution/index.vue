@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 px-4 bg-[#FFFDF5]">
+  <section class="py-16 px-4 bg-[#F3F4EE]">
     <LandingSolutionHeader />
     <div
       class="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto"
@@ -52,8 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSolutionCarousel } from '~/composables/landing/useSolutionCarousel'
+import { useSolutionCarousel } from "~/composables/landing/useSolutionCarousel";
 
-const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd }
-  = useSolutionCarousel()
+const { activeIndex, activeChallenges, handleTouchStart, handleTouchEnd } =
+  useSolutionCarousel();
 </script>

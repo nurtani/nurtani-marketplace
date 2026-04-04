@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen bg-[#FDF6E9] py-16 px-4 md:px-8 overflow-hidden"
+    class="relative min-h-screen bg-[#FFFDF5] py-16 px-4 md:px-8 overflow-hidden"
   >
     <!-- <NuxtImg
       src="/assets/backgrounds/product.png"
