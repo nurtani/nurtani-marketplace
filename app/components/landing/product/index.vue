@@ -1,8 +1,8 @@
 <template>
   <div
-    class="relative min-h-screen bg-[#FFFDF5] py-16 px-4 md:px-8 overflow-hidden"
+    class="relative min-h-screen bg-[#FDF6E9] py-16 px-4 md:px-8 overflow-hidden"
   >
-    <NuxtImg
+    <!-- <NuxtImg
       src="/assets/backgrounds/product.png"
       alt="Background Pattern"
       class="absolute inset-0 z-0 w-full h-full object-cover pointer-events-none opacity-[0.07]"
@@ -10,7 +10,7 @@
       width="600"
       quality="80"
       loading="lazy"
-    />
+    /> -->
 
     <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
       <LandingProductHeader />
@@ -33,15 +33,15 @@
 </template>
 
 <script setup lang="ts">
-import { productData } from '../../../data/landing/product'
-import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
+import { productData } from "../../../data/landing/product";
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 
-const { locale } = useI18n()
-const { t } = useI18n()
+const { locale } = useI18n();
+const { t } = useI18n();
 
 const activeProduct = computed(() => {
-  const currentLang = locale.value as 'id' | 'en'
-  return productData[currentLang] || productData['id']
-})
+  const currentLang = locale.value as "id" | "en";
+  return productData[currentLang] || productData["id"];
+});
 </script>
