@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
-import type { ReadyCardProps } from "~/../../types/landing/ready";
-import { readyData } from "~/data/landing/ready";
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import type { ReadyCardProps } from '~/../../types/landing/ready'
+import { readyData } from '~/data/landing/ready'
 
-const { locale } = useI18n();
-const props = defineProps<ReadyCardProps>();
+const { locale } = useI18n()
+const props = defineProps<ReadyCardProps>()
 
 const cardData = computed(() => {
-  const currentData =
-    readyData[locale.value as keyof typeof readyData] || readyData.id;
+  const currentData
+    = readyData[locale.value as keyof typeof readyData] || readyData.id
 
   return {
     bgImage: props.bgImage ?? currentData.bgImage,
@@ -19,9 +19,9 @@ const cardData = computed(() => {
     primaryCtaText: props.primaryCtaText ?? currentData.primaryCtaText,
     primaryCtaUrl: props.primaryCtaUrl ?? currentData.primaryCtaUrl,
     secondaryCtaText: props.secondaryCtaText ?? currentData.secondaryCtaText,
-    secondaryCtaUrl: props.secondaryCtaUrl ?? currentData.secondaryCtaUrl,
-  };
-});
+    secondaryCtaUrl: props.secondaryCtaUrl ?? currentData.secondaryCtaUrl
+  }
+})
 </script>
 
 <template>
