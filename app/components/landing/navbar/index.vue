@@ -1,22 +1,53 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted, computed } from 'vue'
+// Gunakan useRoute bawaan Nuxt
+const route = useRoute()
 
 const isOpen = ref(false)
 const isScrolled = ref(false)
+
+const isFilterOpen = ref(false)
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
 }
+
+// Buat computed property untuk mengecek apakah user di halaman market
+const isSolidPage = computed(() => {
+  // Sesuaikan '/market' dengan path halaman market kamu sebenarnya
+  return route.path.includes('/market')
+})
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   handleScroll()
 })
 
+// Di dalam file Navbar Anda
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  // Tambahkan baris ini untuk mereset scroll saat komponen hancur/pindah halaman
+  document.body.style.overflow = ''
 })
 
+// Otomatis tutup menu mobile jika user pindah rute/halaman
+watch(
+  () => route.path,
+  () => {
+    isOpen.value = false
+  }
+)
+
 watch(isOpen, (newVal) => {
+  if (typeof window !== 'undefined') {
+    if (newVal) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }
+})
+watch(isFilterOpen, (newVal) => {
   if (typeof window !== 'undefined') {
     if (newVal) {
       document.body.style.overflow = 'hidden'
@@ -31,7 +62,8 @@ watch(isOpen, (newVal) => {
   <header
     :class="[
       'fixed top-0 z-50 w-full transition-colors duration-300',
-      isScrolled || isOpen
+      /* Tambahkan isSolidPage di kondisi ini */
+      isScrolled || isOpen || isSolidPage
         ? 'bg-[#1A4D2E] text-white shadow-md'
         : 'bg-transparent text-white border-b'
     ]"
@@ -48,7 +80,7 @@ watch(isOpen, (newVal) => {
 
       <div class="hidden md:flex items-center gap-4">
         <LandingNavbarLanguage />
-        <LandingNavbarAuth :is-scrolled="isScrolled" />
+        <LandingNavbarAuth :is-scrolled="isScrolled || isSolidPage" />
       </div>
 
       <button

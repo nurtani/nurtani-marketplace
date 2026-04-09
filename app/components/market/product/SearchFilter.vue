@@ -1,20 +1,18 @@
 <template>
-  <div class="flex items-center gap-3 w-full max-w-md mx-auto my-4">
-    <div class="relative flex-1">
-      <div
-        class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none"
-      >
-        <Icon
-          name="lucide:search"
-          class="w-5 h-5 text-gray-400"
-        />
-      </div>
-
-      <input
-        type="text"
-        placeholder=""
-        class="block w-full py-3 pl-11 pr-4 text-sm text-gray-900 bg-[#FFFFFF] border border-[#E5E7EB] rounded-full focus:ring-2 f"
-      >
+  <div class="relative w-full">
+    <div
+      class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none"
+    >
+      <Icon
+        name="lucide:search"
+        class="w-4 h-4 text-gray-400"
+      />
     </div>
+
+    <input
+      type="text"
+      placeholder="Cari Produk..."
+      class="block w-full py-2.5 pl-11 pr-4 text-sm text-gray-900 bg-white border border-[#E5E7EB] rounded-[10px] focus:ring-2 focus:ring-[#1A4D2E] focus:outline-none transition-all duration-200"
+    >
   </div>
 </template>

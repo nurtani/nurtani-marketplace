@@ -161,5 +161,41 @@
         "blockchain": "Sertifikasi Blockchain"
       }
     }
+  },
+  "filter": {
+    "title": "Filter & Urutkan",
+    "sort": "Urutkan",
+    "category": "Kategori",
+    "status": "Status Produk",
+    "price": "Harga",
+
+    "sortOptions": {
+      "popular": "Terpopuler",
+      "latest": "Terbaru",
+      "cheapest": "Harga Termurah",
+      "expensive": "Harga Termahal"
+    },
+
+    "categoryOptions": {
+      "all": "Semua Kategori",
+      "rice": "Beras & Biji-bijian",
+      "fruit": "Buah-Buahan",
+      "spice": "Rempah-rempah",
+      "vegetable": "Sayuran"
+    },
+
+    "statusOptions": {
+      "organic": "Organik",
+      "harvest_today": "Panen Hari Ini",
+      "best_seller": "Terlaris"
+    },
+
+    "priceOptions": {
+      "all": "Semua",
+      "p1": "Rp 0 – Rp 10.000",
+      "p2": "Rp 10.000 – Rp 20.000",
+      "p3": "Rp 20.000 – Rp 50.000",
+      "p4": "Rp 50.000+"
+    }
   }
 }

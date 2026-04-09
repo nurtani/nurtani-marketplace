@@ -56,3 +56,107 @@
 .gradient-bg-dark {
   background: linear-gradient(135deg, #1a4731 0%, #008236 100%);
 }
+
+/* --- Animasi Expand dari Tombol --- */
+.expand-from-button-enter-active,
+.expand-from-button-leave-active {
+  transition:
+    clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease-in-out;
+}
+
+.expand-from-button-enter-from,
+.expand-from-button-leave-to {
+  opacity: 0;
+  clip-path: circle(0px at 90% 100px);
+}
+
+.expand-from-button-enter-to,
+.expand-from-button-leave-from {
+  opacity: 1;
+  clip-path: circle(150% at 90% 100px);
+}
+
+/* Custome input cart filter */
+/* Radio button */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #9ca3af;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  flex-shrink: 0;
+  transform: none !important;
+}
+
+input[type="radio"]:checked {
+  border-color: #1a4f32;
+  background-color: white;
+  box-shadow: inset 0 0 0 4px #1a4f32;
+}
+
+input[type="radio"]:focus,
+input[type="radio"]:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 4px #1a4f32;
+}
+
+/* Hapus efek hover pada touch device */
+@media (hover: hover) {
+  input[type="radio"]:hover {
+    border-color: #1a4f32;
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #9ca3af;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+  flex-shrink: 0;
+  transform: none !important;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #1a4f32;
+  background-color: #1a4f32;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible {
+  outline: none;
+}
+
+@media (hover: hover) {
+  input[type="checkbox"]:hover {
+    border-color: #1a4f32;
+  }
+}
+
+@media (min-width: 1024px) {
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  input[type="radio"]:checked {
+    box-shadow: inset 0 0 0 3px #1a4f32;
+  }
+}

@@ -26,7 +26,9 @@
       </div>
 
       <div class="mt-12">
-        <LandingButton :label="t('product.button')" />
+        <NuxtLink to="/market">
+          <LandingButton :label="t('product.button')" />
+        </NuxtLink>
       </div>
     </div>
   </div>

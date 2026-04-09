@@ -161,5 +161,41 @@
         "blockchain": "Blockchain Certification"
       }
     }
+  },
+  "filter": {
+    "title": "Filter & Sort",
+    "sort": "Sort",
+    "category": "Category",
+    "status": "Product Status",
+    "price": "Price",
+
+    "sortOptions": {
+      "popular": "Most Popular",
+      "latest": "Newest",
+      "cheapest": "Lowest Price",
+      "expensive": "Highest Price"
+    },
+
+    "categoryOptions": {
+      "all": "All Categories",
+      "rice": "Rice & Grains",
+      "fruit": "Fruits",
+      "spice": "Spices",
+      "vegetable": "Vegetables"
+    },
+
+    "statusOptions": {
+      "organic": "Organic",
+      "harvest_today": "Harvest Today",
+      "best_seller": "Best Seller"
+    },
+
+    "priceOptions": {
+      "all": "All",
+      "p1": "$0 – $10",
+      "p2": "$10 – $20",
+      "p3": "$20 – $50",
+      "p4": "$50+"
+    }
   }
 }
