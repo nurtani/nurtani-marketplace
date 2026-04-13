@@ -14,14 +14,9 @@ const activeChallenges = computed(() => {
 
 <template>
   <section class="relative w-full flex flex-col py-16 md:py-20">
-    <NuxtImg
-      src="/assets/backgrounds/farmer.png"
-      alt="Background NurTani"
-      class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
-      format="webp"
-      width="1920"
-      quality="80"
-      preload
+    <div
+      class="absolute inset-0 w-full h-full pointer-events-none z-0 bg-cover bg-center bg-no-repeat"
+      style="background-image: url(&quot;/assets/backgrounds/farmer.png&quot;)"
     />
 
     <div
@@ -42,7 +37,6 @@ const activeChallenges = computed(() => {
     >
       <LandingChallengeHeader />
 
-      <!-- Grid untuk SEMUA ukuran, stagger kolom kanan -->
       <div class="grid grid-cols-2 w-full gap-x-4 md:gap-x-96 pt-4 md:pt-0">
         <div class="flex flex-col gap-8 md:gap-10">
           <LandingChallengeCard
@@ -54,7 +48,6 @@ const activeChallenges = computed(() => {
             :description="item.description"
             :align="index === 0 ? 'left' : 'center'"
             :class="[
-              // 👇 Tambahkan md:ml-12 (Margin Left) khusus untuk card index 0 👇
               index === 0 ? 'mb-14 md:mb-0 md:ml-12 lg:ml-20' : '',
               'md:self-center'
             ]"

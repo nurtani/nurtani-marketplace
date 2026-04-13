@@ -1,35 +1,39 @@
+// composables/market/useCartButton.ts
 import { ref, onMounted, onUnmounted } from 'vue'
 
 export function useCartButton() {
   const bottomOffset = ref('24px')
-  let observer: IntersectionObserver | null = null
+  const GAP = 24 // jarak dari tepi bawah viewport (px)
 
-  onMounted(() => {
+  function updateOffset() {
     const footer = document.querySelector('footer')
     if (!footer) return
 
-    observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        if (!entry) return
+    const footerTop = footer.getBoundingClientRect().top
+    const viewportHeight = window.innerHeight
 
-        bottomOffset.value = entry.isIntersecting
-          ? `${entry.intersectionRect.height + 24}px`
-          : '24px'
-      },
-      {
-        threshold: [0, 1] // cukup ini, jangan overkill
-      }
-    )
+    // Seberapa jauh footer masuk ke viewport dari bawah
+    const overlap = viewportHeight - footerTop
 
-    observer.observe(footer)
+    if (overlap > 0) {
+      // Footer mulai terlihat → naikkan button
+      bottomOffset.value = `${overlap + GAP}px`
+    } else {
+      // Footer belum terlihat → posisi default
+      bottomOffset.value = `${GAP}px`
+    }
+  }
+
+  onMounted(() => {
+    updateOffset() // inisialisasi
+    window.addEventListener('scroll', updateOffset, { passive: true })
+    window.addEventListener('resize', updateOffset, { passive: true })
   })
 
   onUnmounted(() => {
-    observer?.disconnect()
+    window.removeEventListener('scroll', updateOffset)
+    window.removeEventListener('resize', updateOffset)
   })
 
-  return {
-    bottomOffset
-  }
+  return { bottomOffset }
 }

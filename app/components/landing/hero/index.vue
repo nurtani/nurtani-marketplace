@@ -13,14 +13,10 @@
         );
       "
     />
-    <NuxtImg
-      src="/assets/backgrounds/hero.png"
-      alt="Background NurTani"
-      class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none z-0"
-      format="webp"
-      width="1920"
-      quality="80"
-      preload
+
+    <div
+      class="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0 bg-cover bg-center bg-no-repeat"
+      style="background-image: url(&quot;/assets/backgrounds/hero.png&quot;)"
     />
 
     <div

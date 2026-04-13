@@ -4,7 +4,7 @@
   >
     <div class="relative w-full aspect-[4/3] md:aspect-[5/4] bg-gray-100">
       <NuxtImg
-        :src="product.image"
+        :src="product.images[0]"
         :alt="product.title"
         class="absolute inset-0 w-full h-full object-cover"
         format="webp"
@@ -130,7 +130,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from '~/../../types/landing/product'
+import type { Product } from '~/../../types/market/product'
 
 defineProps<{
   product: Product
