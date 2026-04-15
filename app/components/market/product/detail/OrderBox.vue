@@ -33,9 +33,33 @@
         </button>
       </div>
 
-      <span class="text-sm font-bold text-[#64748B] uppercase shrink-0">
-        /KG
-      </span>
+      <div class="relative shrink-0 flex items-center">
+        <select
+          v-model="selectedUnit"
+          class="appearance-none bg-white border border-gray-200 rounded-xl text-sm font-bold text-[#131722] uppercase pl-4 pr-8 h-[48px] cursor-pointer focus:outline-none"
+        >
+          <option
+            v-for="unit in dummyUnits"
+            :key="unit.id"
+            :value="unit.value"
+          >
+            {{ unit.label }}
+          </option>
+        </select>
+        <div
+          class="pointer-events-none absolute right-3 flex items-center text-[#131722]"
+        >
+          <svg
+            class="h-3 w-3 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
 
     <button
@@ -53,8 +77,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { dummyUnits } from '~/data/market/unit'
 
 const quantity = ref(1)
+const selectedUnit = ref(dummyUnits.value[0]?.value ?? 'kg')
 
 const increment = () => {
   quantity.value++

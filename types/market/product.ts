@@ -40,4 +40,5 @@ export interface Product {
   seller: Seller
   description: string
   histories: ProductHistory[]
+  linkTo?: string
 }

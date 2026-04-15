@@ -116,11 +116,24 @@
 
           <div>
             <slot name="action">
-              <button
-                class="bg-[#00A844] hover:bg-green-600 text-white w-8 h-8 md:w-11 md:h-11 rounded-full flex items-center justify-center text-xl md:text-2xl font-light shadow-md transition-transform active:scale-95 shrink-0"
+              <NuxtLink
+                v-if="props.linkTo"
+                :to="props.linkTo"
               >
-                +
-              </button>
+                <ActionButton
+                  :icon="actionIcon"
+                  :variant="actionVariant"
+                  :size="size"
+                />
+              </NuxtLink>
+
+              <ActionButton
+                v-else
+                :icon="actionIcon"
+                :variant="actionVariant"
+                :size="size"
+                @action="emit('action')"
+              />
             </slot>
           </div>
         </div>
@@ -130,17 +143,27 @@
 </template>
 
 <script setup lang="ts">
+import { useProductCard } from '~/composables/component/useProductCard'
 import type { Product } from '~/../../types/market/product'
 
-defineProps<{
-  product: Product
-}>()
+const props = withDefaults(
+  defineProps<{
+    product: Product
+    actionIcon?: string
+    actionVariant?: 'primary' | 'danger' | 'neutral'
+    size?: 'sm' | 'md' | 'lg'
+    linkTo?: string
+  }>(),
+  {
+    actionIcon: '+',
+    actionVariant: 'primary',
+    size: 'md'
+  }
+)
 
-const formatRupiah = (number: number): string => {
-  return new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0
-  }).format(number)
-}
+const { formatRupiah } = useProductCard()
+
+const emit = defineEmits<{
+  (e: 'action'): void
+}>()
 </script>

@@ -21,13 +21,15 @@ const { t } = useI18n()
       <button
         class="bg-[#FFEEAD] text-[#1A4D2E] px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base cursor-pointer"
       >
-        {{ t("hero.content.btn_market") }}
-      </button>
-      <button
-        class="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1A4D2E] transition text-sm md:text-base cursor-pointer"
-      >
         {{ t("hero.content.btn_join") }}
       </button>
+
+      <NuxtLink
+        to="/market"
+        class="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1A4D2E] transition text-sm md:text-base cursor-pointer"
+      >
+        {{ t("hero.content.btn_market") }}
+      </NuxtLink>
     </div>
   </div>
 </template>

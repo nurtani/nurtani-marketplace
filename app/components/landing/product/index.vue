@@ -12,6 +12,8 @@
           v-for="item in dummyProducts"
           :key="item.id"
           :product="item"
+          action-icon=">"
+          :link-to="`/market/${slugify(item.title)}-${item.id}`"
         />
       </div>
 
@@ -28,7 +30,10 @@
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 import { dummyProduct } from '~/data/market/product'
+import { useProduct } from '~/composables/market/useProduct'
 
 const { t } = useI18n()
 const dummyProducts = ref(dummyProduct)
+
+const { slugify } = useProduct()
 </script>

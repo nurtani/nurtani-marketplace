@@ -11,7 +11,7 @@
 withDefaults(
   defineProps<{
     type?: 'button' | 'submit' | 'reset'
-    label: string // Hapus tanda tanya (?) agar prop ini wajib diisi
+    label: string
   }>(),
   {
     type: 'button'
