@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-[#FFFDF5] pb-[100px] lg:pb-0 px-[24px] py-[62px] md:px-[48px] md:py-[92px]"
+    class="w-full bg-[#FFFDF5] pb-[100px] lg:pb-0 px-[12px] py-[62px] md:px-[48px] md:py-[92px]"
   >
     <div
       class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-[60px] justify-center mx-auto max-w-[1440px]"
@@ -53,9 +53,15 @@
       </div>
     </div>
 
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50">
+    <div
+      data-order-box-mobile
+      class="lg:hidden fixed bottom-0 left-0 right-0 z-50"
+    >
       <MarketProductDetailOrderBox />
     </div>
+
+    <!-- Cart button — visible on all screen sizes -->
+    <CartButton @click="handleCartClick" />
   </div>
 </template>
 
@@ -65,4 +71,8 @@ import type { Product } from '~~/types/market/product'
 defineProps<{
   product: Product
 }>()
+
+function handleCartClick() {
+  // TODO: buka drawer/modal keranjang
+}
 </script>

@@ -39,7 +39,7 @@
             </NuxtLink>
           </div>
 
-          <MarketProductCartButton @click="handleCartClick" />
+          <CartButton @click="handleCartClick" />
         </div>
       </div>
     </div>

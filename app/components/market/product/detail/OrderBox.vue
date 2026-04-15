@@ -4,7 +4,8 @@
       <span
         class="text-[12px] font-bold text-[#64748B] tracking-wider uppercase shrink-0"
       >
-        Jumlah Pesanan
+        Jumlah <br class="block md:hidden">
+        Pesanan
       </span>
 
       <div

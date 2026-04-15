@@ -23,13 +23,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UApp>
-    <LandingNavbar />
-
-    <UMain>
-      <NuxtPage />
-    </UMain>
-
-    <LandingFooter />
-  </UApp>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
