@@ -38,8 +38,6 @@
               <ProductCard :product="product" />
             </NuxtLink>
           </div>
-
-          <CartButton @click="handleCartClick" />
         </div>
       </div>
     </div>
@@ -64,11 +62,6 @@
 <script setup lang="ts">
 import { useProduct } from '~/composables/market/useProduct'
 
-const {
-  isFilterOpen,
-  handleFilterChange,
-  handleCartClick,
-  slugify,
-  dummyProducts
-} = useProduct()
+const { isFilterOpen, handleFilterChange, slugify, dummyProducts }
+  = useProduct()
 </script>

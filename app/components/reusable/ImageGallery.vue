@@ -8,8 +8,9 @@
         mode="out-in"
       >
         <NuxtImg
+          v-if="safeImages.length"
           :key="activeIndex"
-          :src="images[activeIndex]"
+          :src="safeImages[activeIndex]"
           alt="Main Product"
           class="w-full h-full object-cover"
         />
@@ -35,7 +36,7 @@
 
     <div class="flex gap-3 overflow-x-auto pb-2 custom-scrollbar">
       <div
-        v-for="(img, index) in images"
+        v-for="(img, index) in safeImages"
         :key="'thumb-' + index"
         class="flex-shrink-0 w-28 sm:w-36 md:w-44 aspect-[4/3] rounded-xl overflow-hidden cursor-pointer transition-all duration-200 border-4 relative"
         :class="
@@ -67,4 +68,5 @@ const props = defineProps<{
   images: string[]
 }>()
 const { activeIndex, images } = useImageGallery(props.images)
+const safeImages = computed(() => images.value ?? [])
 </script>

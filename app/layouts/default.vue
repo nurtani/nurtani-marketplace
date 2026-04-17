@@ -1,25 +1,21 @@
 <script setup lang="ts">
 const route = useRoute()
-
-const showCart = computed(() => route.meta.showCart === true)
+const showCart = computed(() => route.meta?.showCart === true)
 </script>
 
 <template>
-  <UApp>
-    <LandingNavbar />
+  <div>
+    <UApp>
+      <LandingNavbar />
+      <UMain>
+        <slot />
+      </UMain>
+      <LandingFooter />
+    </UApp>
 
-    <UMain>
-      <slot />
-    </UMain>
-
-    <!-- Cart Button -->
-    <div
+    <CartButton
       v-if="showCart"
-      class="sticky bottom-0 lg:hidden bg-white p-4 z-10"
-    >
-      <CartButton />
-    </div>
-
-    <LandingFooter />
-  </UApp>
+      class="fixed right-6 z-50"
+    />
+  </div>
 </template>

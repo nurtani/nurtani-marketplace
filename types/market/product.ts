@@ -1,20 +1,45 @@
 // types/market/product.ts
 
-export interface ProductHistory {
-  id: number
-  type: 'penanduran' | 'perawatan' | 'panen'
-  title: string
-  date: string
-  farmer: string
-  description: string
-  digitalVerifyUrl: string
-}
-
 export interface Seller {
+  id: string
   name: string
   avatar: string
   location: string
   farmerId: string
+  role?: string
+  isVerified?: boolean
+  stats?: {
+    rating?: number
+    totalProducts?: number
+    totalSales?: number
+  }
+  social?: {
+    instagram?: string
+    facebook?: string
+    website?: string
+  }
+  description?: string
+  joinedAt?: string
+}
+
+export interface ProductHistory {
+  id: string
+  type: 'penanduran' | 'perawatan' | 'panen'
+  title: string
+  status?: 'Selesai' | 'Proses' | 'Menunggu'
+  date: string
+  actor: {
+    name: string
+    avatar: string
+    role?: string
+  }
+  images?: string[]
+  verification?: {
+    label: string
+    buttonText: string
+    url: string
+  }
+  activity: string
 }
 
 export interface ProductCategory {

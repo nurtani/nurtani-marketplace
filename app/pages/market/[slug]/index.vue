@@ -16,6 +16,10 @@
 <script setup lang="ts">
 import { dummyProduct } from '~/data/market/product'
 
+definePageMeta({
+  showCart: true
+})
+
 const route = useRoute()
 const slug = route.params.slug as string
 const id = Number(slug.split('-').pop())

@@ -8,7 +8,7 @@
       <div
         class="w-full lg:max-w-[736px] flex flex-col gap-6 lg:shrink-0 min-w-0"
       >
-        <MarketProductDetailImageGallery :images="product.images" />
+        <ImageGallery :images="safeImages" />
 
         <div class="lg:hidden">
           <MarketProductDetailHeader :product="product" />
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <div class="w-full pt-10 md:pb-10">
+    <div class="w-full pt-10 pb-20 md:pb-10">
       <h2 class="text-2xl font-bold text-gray-900 mb-6">
         Riwayat Produk
       </h2>
@@ -46,7 +46,7 @@
       <div class="relative flex flex-col gap-6">
         <div class="absolute left-0 top-4 bottom-8 w-[2px] bg-white z-0" />
         <MarketProductDetailHistory
-          v-for="history in [...product.histories].reverse()"
+          v-for="history in histories"
           :key="history.id"
           :history="history"
         />
@@ -54,25 +54,60 @@
     </div>
 
     <div
+      ref="orderBoxRef"
       data-order-box-mobile
-      class="lg:hidden fixed bottom-0 left-0 right-0 z-50"
+      :style="{ bottom: orderBoxOffset }"
+      class="lg:hidden fixed left-0 right-0 z-50"
     >
       <MarketProductDetailOrderBox />
     </div>
-
-    <!-- Cart button — visible on all screen sizes -->
-    <CartButton @click="handleCartClick" />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Product } from '~~/types/market/product'
+import { useFloatingElement } from '~/composables/component/useFloatingElement'
 
-defineProps<{
+const { updateOffset, orderBoxOffset } = useFloatingElement()
+
+const orderBoxRef = ref<HTMLElement | null>(null)
+
+const handleUpdate = () => {
+  const footerEl = document.querySelector('footer') as HTMLElement | null
+
+  updateOffset(orderBoxRef.value, footerEl)
+}
+
+let observer: ResizeObserver
+
+onMounted(() => {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      handleUpdate()
+    })
+  })
+
+  observer = new ResizeObserver(handleUpdate)
+
+  if (orderBoxRef.value) observer.observe(orderBoxRef.value)
+
+  window.addEventListener('scroll', handleUpdate, { passive: true })
+  window.addEventListener('resize', handleUpdate, { passive: true })
+})
+
+onUnmounted(() => {
+  observer?.disconnect()
+  window.removeEventListener('scroll', handleUpdate)
+  window.removeEventListener('resize', handleUpdate)
+})
+
+const { product } = defineProps<{
   product: Product
 }>()
 
-function handleCartClick() {
-  // TODO: buka drawer/modal keranjang
-}
+const histories = computed(() => {
+  return product?.histories ? [...product.histories].reverse() : []
+})
+
+const safeImages = computed(() => product?.images ?? [])
 </script>

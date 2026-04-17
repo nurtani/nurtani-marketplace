@@ -39,17 +39,17 @@
               src="/icon/component/location3.png"
               class="w-3.5 h-3.5"
             />
-            <span>{{ history.farmer }}</span>
+            <span>{{ history.actor.name }}</span>
           </div>
         </div>
 
         <p class="text-gray-500 text-sm leading-6 mt-1 line-clamp-2">
-          {{ history.description }}
+          {{ history.activity }}
         </p>
 
         <NuxtLink
-          v-if="history.digitalVerifyUrl"
-          :to="history.digitalVerifyUrl"
+          v-if="history.verification"
+          :to="verificationUrl"
           class="text-green-600 font-bold text-xs flex items-center gap-1 mt-1 underline decoration-2 underline-offset-4"
         >
           Cek Keaslian Digital &rarr;
@@ -68,11 +68,19 @@ const props = defineProps<{
   history: ProductHistory
 }>()
 
+const route = useRoute()
+const slug = route.params.slug as string // ambil slug dari URL aktif
+
 const { getIcon, getContainerColor, getDotColor } = useHistory()
 
 const iconName = computed(() => getIcon(props.history.type))
 const dotColor = computed(() => getDotColor(props.history.type))
 const iconContainerColor = computed(() =>
   getContainerColor(props.history.type)
+)
+
+// Generate URL dinamis berdasarkan slug & history id
+const verificationUrl = computed(
+  () => `/market/${slug}/history/${props.history.id}`
 )
 </script>
