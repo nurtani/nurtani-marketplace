@@ -23,9 +23,20 @@ export function useFloatingElement() {
     orderBoxOffset.value = `${footerOverlap}px`
   }
 
+  function updateOffsetFooterOnly(footerEl: HTMLElement | null) {
+    let footerOverlap = 0
+    if (footerEl) {
+      const footerTop = footerEl.getBoundingClientRect().top
+      footerOverlap = Math.max(0, window.innerHeight - footerTop)
+    }
+
+    bottomOffset.value = `${footerOverlap + GAP}px`
+  }
+
   return {
     bottomOffset,
     orderBoxOffset,
-    updateOffset
+    updateOffset,
+    updateOffsetFooterOnly
   }
 }

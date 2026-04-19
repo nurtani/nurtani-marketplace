@@ -57,7 +57,7 @@
       ref="orderBoxRef"
       data-order-box-mobile
       :style="{ bottom: orderBoxOffset }"
-      class="lg:hidden fixed left-0 right-0 z-50"
+      class="lg:hidden fixed left-0 right-0"
     >
       <MarketProductDetailOrderBox />
     </div>
