@@ -30,13 +30,16 @@
           <div
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6"
           >
-            <NuxtLink
+            <!-- ✅ Hapus NuxtLink, pakai :link-to prop & @action -->
+            <ProductCard
               v-for="product in dummyProducts"
               :key="product.id"
-              :to="`/market/${slugify(product.title)}-${product.id}`"
-            >
-              <ProductCard :product="product" />
-            </NuxtLink>
+              :product="product"
+              :link-to="`/market/${slugify(product.title)}-${product.id}`"
+              action-icon="+"
+              action-variant="primary"
+              @action="addToCart(product)"
+            />
           </div>
         </div>
       </div>
@@ -60,8 +63,10 @@
 </template>
 
 <script setup lang="ts">
-import { useProduct } from '~/composables/market/useProduct'
+import { useProduct } from "~/composables/market/useProduct";
+import { useCartMutation } from "~/composables/market/useCartMutation";
 
-const { isFilterOpen, handleFilterChange, slugify, dummyProducts }
-  = useProduct()
+const { isFilterOpen, handleFilterChange, slugify, dummyProducts } =
+  useProduct();
+const { addToCart } = useCartMutation();
 </script>

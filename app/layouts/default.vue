@@ -1,6 +1,16 @@
 <script setup lang="ts">
-const route = useRoute()
-const showCart = computed(() => route.meta?.showCart === true)
+import { useI18n } from "vue-i18n";
+
+const { locale } = useI18n();
+
+useHead({
+  htmlAttrs: {
+    lang: locale,
+  },
+});
+
+const route = useRoute();
+const showCart = computed(() => route.meta?.showCart === true);
 </script>
 
 <template>
@@ -13,9 +23,6 @@ const showCart = computed(() => route.meta?.showCart === true)
       <LandingFooter />
     </UApp>
 
-    <CartButton
-      v-if="showCart"
-      class="fixed right-6 z-50"
-    />
+    <CartButton v-if="showCart" class="fixed right-6 z-50" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
 
 <template>
@@ -9,7 +9,8 @@ const { t } = useI18n()
     <h1
       class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-serif text-white"
     >
-      {{ t("hero.content.title_top") }}<br>
+      {{ t("hero.content.title_top") }}
+      <br />
       <span class="text-[#FFEEAD] italic">{{
         t("hero.content.title_bottom")
       }}</span>
@@ -19,6 +20,7 @@ const { t } = useI18n()
     </p>
     <div class="flex flex-wrap gap-3 md:gap-4 mt-2 md:mt-4">
       <button
+        aria-label="Bergabung dengan platform Nurtani"
         class="bg-[#FFEEAD] text-[#1A4D2E] px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:opacity-90 transition text-sm md:text-base cursor-pointer"
       >
         {{ t("hero.content.btn_join") }}
@@ -26,6 +28,7 @@ const { t } = useI18n()
 
       <NuxtLink
         to="/market"
+        aria-label="Buka halaman market produk"
         class="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1A4D2E] transition text-sm md:text-base cursor-pointer"
       >
         {{ t("hero.content.btn_market") }}

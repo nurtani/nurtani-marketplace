@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { useAutoCarousel } from '~/composables/landing/useHeroCarousel'
-import { farmerImages, productImages } from '~/data/landing/hero' // sesuaikan path file dummy
+import { useI18n } from "vue-i18n";
+import { useAutoCarousel } from "~/composables/landing/useHeroCarousel";
+import { farmerImages, productImages } from "~/data/landing/hero"; // sesuaikan path file dummy
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const { currentIndex: farmerIndex } = useAutoCarousel(
   farmerImages.length,
   3000,
-  0
-)
+  0,
+);
 const { currentIndex: productIndex } = useAutoCarousel(
   productImages.length,
   3000,
-  1500
-)
+  1500,
+);
 
 const activeFarmer = computed(
-  () => (farmerImages[farmerIndex.value] ?? farmerImages[0])!
-)
+  () => (farmerImages[farmerIndex.value] ?? farmerImages[0])!,
+);
 </script>
 
 <template>
@@ -30,6 +30,7 @@ const activeFarmer = computed(
         >
           <NuxtImg
             v-for="(img, i) in farmerImages"
+            :aria-hidden="i !== farmerIndex"
             :key="img.src"
             :src="img.src"
             :alt="img.alt"
@@ -44,6 +45,7 @@ const activeFarmer = computed(
             preload
           />
           <div
+            aria-live="polite"
             class="col-start-1 row-start-1 flex flex-col justify-end w-full px-3 md:px-6 pb-4 md:pb-22 text-start text-white bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10"
           >
             <p class="font-bold text-[15px] md:text-[18px] leading-tight">
@@ -94,6 +96,7 @@ const activeFarmer = computed(
         >
           <NuxtImg
             v-for="(img, i) in productImages"
+            :aria-hidden="i !== productIndex"
             :key="img.src"
             :src="img.src"
             :alt="img.alt"

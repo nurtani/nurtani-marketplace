@@ -1,6 +1,7 @@
 <template>
   <div
-    class="w-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-sm flex flex-col h-full"
+    class="w-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-sm flex flex-col h-full cursor-pointer"
+    @click="handleCardClick"
   >
     <div class="relative w-full aspect-[4/3] md:aspect-[5/4] bg-gray-100">
       <NuxtImg
@@ -101,7 +102,7 @@
       </div>
 
       <div>
-        <hr class="border-gray-100 my-3">
+        <hr class="border-gray-100 my-3" />
         <div class="flex justify-between items-end">
           <div>
             <p class="text-gray-500 text-[9px] md:text-xs font-medium mb-0.5">
@@ -115,24 +116,13 @@
           </div>
 
           <div>
+            <!-- Sesudah -->
             <slot name="action">
-              <NuxtLink
-                v-if="props.linkTo"
-                :to="props.linkTo"
-              >
-                <ActionButton
-                  :icon="actionIcon"
-                  :variant="actionVariant"
-                  :size="size"
-                />
-              </NuxtLink>
-
               <ActionButton
-                v-else
                 :icon="actionIcon"
                 :variant="actionVariant"
                 :size="size"
-                @action="emit('action')"
+                @click.stop="emit('action')"
               />
             </slot>
           </div>
@@ -143,27 +133,36 @@
 </template>
 
 <script setup lang="ts">
-import { useProductCard } from '~/composables/component/useProductCard'
-import type { Product } from '~/../../types/market/product'
+import { useProductCard } from "~/composables/component/useProductCard";
+import type { Product } from "~/../../types/market/product";
+
+const router = useRouter(); // ✅ navigasi manual
 
 const props = withDefaults(
   defineProps<{
-    product: Product
-    actionIcon?: string
-    actionVariant?: 'primary' | 'danger' | 'neutral'
-    size?: 'sm' | 'md' | 'lg'
-    linkTo?: string
+    product: Product;
+    actionIcon?: string;
+    actionVariant?: "primary" | "danger" | "neutral";
+    size?: "sm" | "md" | "lg";
+    linkTo?: string;
   }>(),
   {
-    actionIcon: '+',
-    actionVariant: 'primary',
-    size: 'md'
-  }
-)
+    actionIcon: "+",
+    actionVariant: "primary",
+    size: "md",
+  },
+);
 
-const { formatRupiah } = useProductCard()
+const { formatRupiah } = useProductCard();
 
 const emit = defineEmits<{
-  (e: 'action'): void
-}>()
+  (e: "action"): void;
+}>();
+
+// ✅ navigasi hanya jika linkTo ada
+function handleCardClick() {
+  if (props.linkTo) {
+    router.push(props.linkTo);
+  }
+}
 </script>
