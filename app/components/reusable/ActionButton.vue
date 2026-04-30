@@ -1,48 +1,48 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    icon?: string;
-    variant?: "primary" | "danger" | "neutral";
-    size?: "sm" | "md" | "lg";
+    icon?: string
+    variant?: 'primary' | 'danger' | 'neutral'
+    size?: 'sm' | 'md' | 'lg'
   }>(),
   {
-    icon: "+",
-    variant: "primary",
-    size: "md",
-  },
-);
+    icon: '+',
+    variant: 'primary',
+    size: 'md'
+  }
+)
 
 const emit = defineEmits<{
-  (e: "click", event: MouseEvent): void;
-}>();
+  (e: 'click', event: MouseEvent): void
+}>()
 
 // ✅ Tambah ini
 function handleClick(e: MouseEvent) {
-  e.stopPropagation();
-  emit("click", e);
+  e.stopPropagation()
+  emit('click', e)
 }
 
 const sizeClass = computed(() => {
   switch (props.size) {
-    case "sm":
-      return "w-8 h-8 text-xl";
-    case "lg":
-      return "w-12 h-12 text-2xl";
+    case 'sm':
+      return 'w-8 h-8 text-xl'
+    case 'lg':
+      return 'w-12 h-12 text-2xl'
     default:
-      return "w-10 h-10 text-xl";
+      return 'w-10 h-10 text-xl'
   }
-});
+})
 
 const variantClass = computed(() => {
   switch (props.variant) {
-    case "danger":
-      return "bg-red-500 hover:bg-red-600";
-    case "neutral":
-      return "bg-gray-400 hover:bg-gray-500";
+    case 'danger':
+      return 'bg-red-500 hover:bg-red-600'
+    case 'neutral':
+      return 'bg-gray-400 hover:bg-gray-500'
     default:
-      return "bg-[#00A844] hover:bg-green-600";
+      return 'bg-[#00A844] hover:bg-green-600'
   }
-});
+})
 </script>
 
 <template>
@@ -50,7 +50,7 @@ const variantClass = computed(() => {
     :class="[
       'text-white rounded-full flex items-center justify-center shadow-md transition-transform active:scale-95',
       sizeClass,
-      variantClass,
+      variantClass
     ]"
     @click="handleClick"
   >

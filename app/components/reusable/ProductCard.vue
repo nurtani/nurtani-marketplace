@@ -102,7 +102,7 @@
       </div>
 
       <div>
-        <hr class="border-gray-100 my-3" />
+        <hr class="border-gray-100 my-3">
         <div class="flex justify-between items-end">
           <div>
             <p class="text-gray-500 text-[9px] md:text-xs font-medium mb-0.5">
@@ -133,36 +133,36 @@
 </template>
 
 <script setup lang="ts">
-import { useProductCard } from "~/composables/component/useProductCard";
-import type { Product } from "~/../../types/market/product";
+import { useProductCard } from '~/composables/component/useProductCard'
+import type { Product } from '~/../../types/market/product'
 
-const router = useRouter(); // ✅ navigasi manual
+const router = useRouter() // ✅ navigasi manual
 
 const props = withDefaults(
   defineProps<{
-    product: Product;
-    actionIcon?: string;
-    actionVariant?: "primary" | "danger" | "neutral";
-    size?: "sm" | "md" | "lg";
-    linkTo?: string;
+    product: Product
+    actionIcon?: string
+    actionVariant?: 'primary' | 'danger' | 'neutral'
+    size?: 'sm' | 'md' | 'lg'
+    linkTo?: string
   }>(),
   {
-    actionIcon: "+",
-    actionVariant: "primary",
-    size: "md",
-  },
-);
+    actionIcon: '+',
+    actionVariant: 'primary',
+    size: 'md'
+  }
+)
 
-const { formatRupiah } = useProductCard();
+const { formatRupiah } = useProductCard()
 
 const emit = defineEmits<{
-  (e: "action"): void;
-}>();
+  (e: 'action'): void
+}>()
 
 // ✅ navigasi hanya jika linkTo ada
 function handleCardClick() {
   if (props.linkTo) {
-    router.push(props.linkTo);
+    router.push(props.linkTo)
   }
 }
 </script>

@@ -1,44 +1,38 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import type { Product } from "~~/types/market/product";
-
-export interface CartItem {
-  cartItemId: string | number;
-  product: Product;
-  quantity: number;
-}
+import { computed } from 'vue'
+import type { CartItem } from '~~/types/market/product' // ✅ import, bukan define ulang
 
 const props = defineProps<{
-  item: CartItem;
-}>();
+  item: CartItem
+}>()
 
-const emit = defineEmits(["increment", "decrement", "remove"]);
+const emit = defineEmits(['increment', 'decrement', 'remove'])
 
 const formatRupiah = (value: number) => {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    minimumFractionDigits: 0,
-  }).format(value);
-};
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0
+  }).format(value)
+}
 
-const formattedPrice = computed(() => formatRupiah(props.item.product.price));
-const subtotal = computed(() => props.item.product.price * props.item.quantity);
-const formattedSubtotal = computed(() => formatRupiah(subtotal.value));
+const formattedPrice = computed(() => formatRupiah(props.item.product.price))
+const subtotal = computed(() => props.item.product.price * props.item.quantity)
+const formattedSubtotal = computed(() => formatRupiah(subtotal.value))
 
 const displayImage = computed(() => {
   return props.item.product.images && props.item.product.images.length > 0
     ? props.item.product.images[0]
-    : "/placeholder-image.jpg";
-});
+    : '/placeholder-image.jpg'
+})
 
-const incrementQuantity = () => emit("increment", props.item.cartItemId);
+const incrementQuantity = () => emit('increment', props.item.cartItemId)
 const decrementQuantity = () => {
   if (props.item.quantity > 1) {
-    emit("decrement", props.item.cartItemId);
+    emit('decrement', props.item.cartItemId)
   }
-};
-const removeItem = () => emit("remove", props.item.cartItemId);
+}
+const removeItem = () => emit('remove', props.item.cartItemId)
 </script>
 
 <template>
@@ -48,7 +42,7 @@ const removeItem = () => emit("remove", props.item.cartItemId);
     <div class="w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0">
       <NuxtImg
         :src="displayImage"
-        :alt="item.product.title"
+        :alt="props.item.product.title"
         class="w-full h-full object-cover rounded-2xl bg-gray-50"
         loading="lazy"
         width="128"
@@ -60,7 +54,7 @@ const removeItem = () => emit("remove", props.item.cartItemId);
       <div class="flex justify-between items-start">
         <div class="flex flex-col">
           <h3 class="font-bold text-gray-900 text-lg leading-tight">
-            {{ item.product.title }}
+            {{ props.item.product.title }}
           </h3>
 
           <div
@@ -76,29 +70,33 @@ const removeItem = () => emit("remove", props.item.cartItemId);
               stroke-linejoin="round"
             >
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
+              <circle
+                cx="12"
+                cy="10"
+                r="3"
+              />
             </svg>
-            <span>{{ item.product.location }}</span>
+            <span>{{ props.item.product.location }}</span>
           </div>
 
           <div class="flex items-center gap-1.5 mt-2">
             <NuxtImg
-              :src="item.product.seller.avatar || '/default-avatar.png'"
-              :alt="item.product.seller.name"
+              :src="props.item.product.seller.avatar || '/default-avatar.png'"
+              :alt="props.item.product.seller.name"
               class="w-5 h-5 rounded-full object-cover bg-gray-200"
               width="20"
               height="20"
             />
-            <span class="text-xs text-gray-600"
-              >Oleh:
+            <span class="text-xs text-gray-600">
+              Oleh:
               <strong class="font-semibold text-gray-900">{{
-                item.product.seller.name
-              }}</strong></span
-            >
+                props.item.product.seller.name
+              }}</strong>
+            </span>
             <div
               class="flex items-center gap-0.5 text-green-600 text-[11px] font-bold ml-1"
             >
-              • {{ item.product.points }}
+              • {{ props.item.product.points }}
               <svg
                 class="w-3 h-3"
                 viewBox="0 0 24 24"
@@ -120,11 +118,11 @@ const removeItem = () => emit("remove", props.item.cartItemId);
         </div>
 
         <button
-          @click="removeItem"
           class="hover:bg-red-50 p-1.5 rounded-lg transition-colors -mt-1 -mr-1 flex items-center justify-center"
+          @click="removeItem"
         >
           <NuxtImg
-            src="/icons/trash.svg"
+            src="/icon/component/trash.png"
             alt="Hapus Item"
             width="24"
             height="24"
@@ -136,7 +134,10 @@ const removeItem = () => emit("remove", props.item.cartItemId);
       <div class="flex justify-between items-end mt-4">
         <div class="flex flex-col">
           <p class="text-[11px] text-gray-400 font-medium">
-            {{ item.product.priceLabel || `Harga per ${item.product.unit}` }}
+            {{
+              props.item.product.priceLabel
+                || `Harga per ${props.item.product.unit}`
+            }}
           </p>
           <p class="font-extrabold text-[#14552B] text-lg">
             {{ formattedPrice }}
@@ -145,9 +146,9 @@ const removeItem = () => emit("remove", props.item.cartItemId);
 
         <div class="flex items-center gap-3">
           <button
-            @click="decrementQuantity"
             class="w-8 h-8 rounded-full flex items-center justify-center border-2 border-[#14552B] text-[#14552B] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             :disabled="item.quantity <= 1"
+            @click="decrementQuantity"
           >
             <svg
               class="w-4 h-4"
@@ -157,17 +158,22 @@ const removeItem = () => emit("remove", props.item.cartItemId);
               stroke-width="3"
               stroke-linecap="round"
             >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <line
+                x1="5"
+                y1="12"
+                x2="19"
+                y2="12"
+              />
             </svg>
           </button>
 
           <span class="text-gray-900 font-bold text-lg w-5 text-center">{{
-            item.quantity
+            props.item.quantity
           }}</span>
 
           <button
-            @click="incrementQuantity"
             class="w-8 h-8 rounded-full flex items-center justify-center bg-[#14552B] text-white hover:bg-green-800 transition-all shadow-sm"
+            @click="incrementQuantity"
           >
             <svg
               class="w-4 h-4"
@@ -177,8 +183,18 @@ const removeItem = () => emit("remove", props.item.cartItemId);
               stroke-width="3"
               stroke-linecap="round"
             >
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <line
+                x1="12"
+                y1="5"
+                x2="12"
+                y2="19"
+              />
+              <line
+                x1="5"
+                y1="12"
+                x2="19"
+                y2="12"
+              />
             </svg>
           </button>
         </div>
@@ -187,9 +203,11 @@ const removeItem = () => emit("remove", props.item.cartItemId);
       <div
         class="flex justify-between items-end mt-3 border-t border-dashed border-gray-200 pt-3"
       >
-        <div></div>
+        <div />
         <div class="flex flex-col items-end">
-          <p class="text-[11px] text-gray-500 font-medium mb-0.5">Subtotal:</p>
+          <p class="text-[11px] text-gray-500 font-medium mb-0.5">
+            Subtotal:
+          </p>
           <p class="text-[#14552B] font-extrabold text-xl leading-none">
             {{ formattedSubtotal }}
           </p>
@@ -197,7 +215,7 @@ const removeItem = () => emit("remove", props.item.cartItemId);
           <div
             class="flex items-center gap-1 text-green-600 text-[11px] font-bold mt-1"
           >
-            + {{ item.product.points * item.quantity }}
+            + {{ props.item.product.points * props.item.quantity }}
             <svg
               class="w-3 h-3"
               viewBox="0 0 24 24"

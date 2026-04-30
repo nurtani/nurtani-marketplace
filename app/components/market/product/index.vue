@@ -63,10 +63,10 @@
 </template>
 
 <script setup lang="ts">
-import { useProduct } from "~/composables/market/useProduct";
-import { useCartMutation } from "~/composables/market/useCartMutation";
+import { useProduct } from '~/composables/market/useProduct'
+import { useCartMutation } from '~/composables/market/useCartMutation'
 
-const { isFilterOpen, handleFilterChange, slugify, dummyProducts } =
-  useProduct();
-const { addToCart } = useCartMutation();
+const { isFilterOpen, handleFilterChange, slugify, dummyProducts }
+  = useProduct()
+const { addToCart } = useCartMutation()
 </script>
