@@ -1,32 +1,32 @@
 <script setup lang="ts">
-import { useCartStore } from "~/composables/store/cart";
+import { useCartStore } from '~/composables/store/cart'
 
-const cart = useCartStore();
+const cart = useCartStore()
 
 const totalSustainabilityPoints = computed(() =>
   cart.items.reduce(
     (total, item) => total + (item.product?.points || 0) * item.quantity,
-    0,
-  ),
-);
+    0
+  )
+)
 
 const handleIncrement = (cartItemId: string | number) => {
-  const item = cart.items.find((i) => i.cartItemId === cartItemId);
-  if (item) item.quantity++;
-};
+  const item = cart.items.find(i => i.cartItemId === cartItemId)
+  if (item) item.quantity++
+}
 
 const handleDecrement = (cartItemId: string | number) => {
-  const item = cart.items.find((i) => i.cartItemId === cartItemId);
-  if (item && item.quantity > 1) item.quantity--;
-};
+  const item = cart.items.find(i => i.cartItemId === cartItemId)
+  if (item && item.quantity > 1) item.quantity--
+}
 
 const handleRemove = (cartItemId: string | number) => {
-  cart.removeItem(cartItemId);
-};
+  cart.removeItem(cartItemId)
+}
 
 onMounted(() => {
-  console.log("Cart after hydrate:", cart.items);
-});
+  console.log('Cart after hydrate:', cart.items)
+})
 </script>
 
 <template>
@@ -67,9 +67,7 @@ onMounted(() => {
               </h3>
               <p class="text-sm text-green-800">
                 Anda mendapat
-                <span class="font-extrabold"
-                  >{{ totalSustainabilityPoints }} poin</span
-                >
+                <span class="font-extrabold">{{ totalSustainabilityPoints }} poin</span>
                 keberlanjutan!
               </p>
             </div>
@@ -115,7 +113,7 @@ onMounted(() => {
       >
         <div
           class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-4 flex-shrink-0"
-        ></div>
+        />
 
         <MarketCartSummary />
       </div>
