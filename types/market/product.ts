@@ -1,75 +1,49 @@
-// types/market/product.ts
+// stores/cart.ts
+import { defineStore } from "pinia";
+import { ref, computed } from "vue";
+import type {
+  CartItem,
+  Product,
+} from "~/../../types/market/development/MarketProduct";
 
-export interface Seller {
-  id: string
-  name: string
-  avatar: string
-  location: string
-  farmerId: string
-  role?: string
-  isVerified?: boolean
-  stats?: {
-    rating?: number
-    totalProducts?: number
-    totalSales?: number
-  }
-  social?: {
-    instagram?: string
-    facebook?: string
-    website?: string
-  }
-  description?: string
-  joinedAt?: string
-}
+export const useCartStore = defineStore(
+  "cart",
+  () => {
+    const items = ref<CartItem[]>([]);
 
-export interface ProductHistory {
-  id: string
-  type: 'penanduran' | 'perawatan' | 'panen'
-  title: string
-  status?: 'Selesai' | 'Proses' | 'Menunggu'
-  date: string
-  actor: {
-    name: string
-    avatar: string
-    role?: string
-  }
-  images?: string[]
-  verification?: {
-    label: string
-    buttonText: string
-    url: string
-  }
-  activity: string
-}
+    const uniqueItemCount = computed(() => items.value.length);
 
-export interface ProductCategory {
-  id: string
-  title: string
-  subCategory?: string[]
-}
+    function addItem(product: Product) {
+      // ✅ Ganti product.title → product.name
+      console.log("🛒 addItem dipanggil:", product.name);
+      const exists = items.value.find((item) => item.product.id === product.id);
+      if (exists) {
+        exists.quantity += 1;
+      } else {
+        items.value.push({
+          cartItemId: `${product.id}-${Date.now()}`,
+          product,
+          quantity: 1,
+        });
+      }
+      console.log("🛒 items sekarang:", items.value.length);
+    }
 
-export interface Product {
-  id: number
-  title: string
-  images: string[]
-  category: ProductCategory
-  rating: number
-  reviewCount: number
-  isFavorite: boolean
-  isVerified: boolean
-  location: string
-  priceLabel: string
-  price: number
-  unit: string
-  points: number
-  seller: Seller
-  description: string
-  histories: ProductHistory[]
-  linkTo?: string
-}
+    function removeItem(cartItemId: string | number) {
+      items.value = items.value.filter(
+        (item) => item.cartItemId !== cartItemId,
+      );
+    }
 
-export interface CartItem {
-  cartItemId: string | number
-  product: Product
-  quantity: number
-}
+    function clearCart() {
+      items.value = [];
+    }
+
+    return { items, uniqueItemCount, addItem, removeItem, clearCart };
+  },
+  {
+    persist: {
+      storage: piniaPluginPersistedstate.localStorage(),
+    },
+  },
+);

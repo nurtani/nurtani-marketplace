@@ -22,6 +22,7 @@
     "@pinia/colada": "^1.2.1",
     "@pinia/colada-nuxt": "^1.0.0",
     "@pinia/nuxt": "^0.11.3",
+    "@vueuse/core": "^14.3.0",
     "nuxt": "^4.4.2",
     "pinia-plugin-persistedstate": "^4.7.1",
     "tailwindcss": "^4.2.1"
@@ -29,6 +30,8 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
     "@nuxt/icon": "^2.2.1",
+    "@pinia/colada-devtools": "^1.0.0",
+    "@types/node": "^26.0.0",
     "eslint": "^10.0.3",
     "i18nexus-cli": "^3.8.2",
     "typescript": "^5.9.3",

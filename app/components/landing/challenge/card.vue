@@ -1,29 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { ChallengeCardProps } from '../../../../types/landing/challenge'
+import { computed } from "vue";
+import type { ChallengeCardProps } from "../../../../types/landing/challenge";
 
 const props = withDefaults(defineProps<ChallengeCardProps>(), {
-  align: 'left'
-})
+  align: "left",
+});
 
 const positionClass = computed(() => {
-  if (props.align === 'right') return 'self-end'
-  if (props.align === 'center') return 'self-center'
-  return 'self-start'
-})
+  if (props.align === "right") return "self-end";
+  if (props.align === "center") return "self-center";
+  return "self-start";
+});
 </script>
 
 <template>
   <div
     :class="[
-      // 👇 1. Padding & Gap Vertikal diperkecil di mobile (p-3 & gap-y-2), desktop tetap (p-5 & gap-y-4)
       'flex flex-col justify-center gap-y-2 md:gap-y-4 rounded-xl border border-white/10 backdrop-blur-md p-3 md:p-5',
-
-      // 👇 2. Lebar di mobile pakai w-full agar mengisi penuh kolom grid, desktop tetap w-[290px]
       'w-full h-auto',
       'md:w-[290px]',
 
-      positionClass
+      positionClass,
     ]"
     style="
       background: linear-gradient(

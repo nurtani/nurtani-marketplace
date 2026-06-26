@@ -7,7 +7,7 @@
         class="flex lg:hidden flex-row items-center justify-between gap-3 mt-2 mb-6"
       >
         <div class="w-full flex-1">
-          <MarketProductSearchFilter />
+          <MarketProductSearchFilter @search="handleSearch" />
         </div>
         <div class="shrink-0">
           <MarketProductFilterButton @click="isFilterOpen = true" />
@@ -28,18 +28,41 @@
 
         <div class="flex-1 min-w-0 flex flex-col h-full relative">
           <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
           >
-            <!-- ✅ Hapus NuxtLink, pakai :link-to prop & @action -->
-            <ProductCard
-              v-for="product in dummyProducts"
-              :key="product.id"
-              :product="product"
-              :link-to="`/market/${slugify(product.title)}-${product.id}`"
-              action-icon="+"
-              action-variant="primary"
-              @action="addToCart(product)"
-            />
+            <!-- Loading: pertama kali fetch (belum ada data sama sekali) -->
+            <template v-if="asyncStatus === 'loading'">
+              <ProductCardSkeleton v-for="n in 8" :key="n" />
+            </template>
+
+            <template v-else-if="status === 'pending'">
+              <ProductCardSkeleton v-for="n in 8" :key="n" />
+            </template>
+
+            <!-- Error -->
+            <template v-else-if="status === 'error'">
+              <ErrorState />
+            </template>
+
+            <!-- Success tapi kosong -->
+            <template v-else-if="status === 'success' && products.length === 0">
+              <div class="col-span-full">
+                <EmtyState />
+              </div>
+            </template>
+
+            <!-- Success ada data -->
+            <template v-else-if="status === 'success'">
+              <ProductCard
+                v-for="product in products"
+                :key="product.id"
+                :product="product"
+                :link-to="`/market/${slugify(product.name)}-${product.id}`"
+                action-icon="+"
+                action-variant="primary"
+                @action="addToCart(product)"
+              />
+            </template>
           </div>
         </div>
       </div>
@@ -63,10 +86,23 @@
 </template>
 
 <script setup lang="ts">
-import { useProduct } from '~/composables/market/useProduct'
-import { useCartMutation } from '~/composables/market/useCartMutation'
+import { useProduct } from "~/composables/market/useProduct";
+import { useCartMutation } from "~/composables/market/useCartMutation";
+import ProductCardSkeleton from "~/components/reusable/ProductCardSkeleton.vue";
+import EmtyState from "~/components/reusable/EmtyState.vue";
+import ErrorState from "~/components/reusable/ErrorState.vue";
 
-const { isFilterOpen, handleFilterChange, slugify, dummyProducts }
-  = useProduct()
-const { addToCart } = useCartMutation()
+const {
+  isFilterOpen,
+  handleFilterChange,
+  slugify,
+  products,
+  meta,
+  status,
+  asyncStatus,
+  error,
+  filters,
+  handleSearch,
+} = useProduct();
+const { addToCart } = useCartMutation();
 </script>

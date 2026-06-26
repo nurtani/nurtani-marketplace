@@ -1,12 +1,12 @@
 <template>
   <div
-    class="w-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-sm flex flex-col h-full cursor-pointer"
+    class="w-full bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-sm flex flex-col cursor-pointer"
     @click="handleCardClick"
   >
     <div class="relative w-full aspect-[4/3] md:aspect-[5/4] bg-gray-100">
       <NuxtImg
-        :src="product.images[0]"
-        :alt="product.title"
+        :src="product.imageUrl"
+        :alt="product.name"
         class="absolute inset-0 w-full h-full object-cover"
         format="webp"
         loading="lazy"
@@ -16,44 +16,29 @@
         class="absolute top-2 left-2 right-2 md:top-3 md:left-3 md:right-3 flex justify-between items-center gap-1.5 md:gap-2"
       >
         <span
-          v-if="product.isFavorite"
-          class="bg-[#E7000B] text-white text-[9px] md:text-[10px] font-extrabold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-wide flex items-center justify-center min-h-[24px] md:min-h-[26px] leading-none text-center w-max max-w-[55%] shadow-sm"
+          :class="
+            product.status === 'available'
+              ? 'bg-[#1A4D2E] text-white'
+              : 'bg-gray-400 text-white'
+          "
+          class="text-[9px] md:text-[10px] font-extrabold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-wide flex items-center justify-center min-h-[24px] md:min-h-[26px] leading-none text-center w-max max-w-[55%] shadow-sm"
         >
-          <span class="truncate">Produk Favorit</span>
+          <span class="truncate">
+            {{ product.status === "available" ? "Tersedia" : "Habis" }}
+          </span>
         </span>
 
         <span
-          v-else
-          class="bg-[#1A4D2E] text-white text-[9px] md:text-[10px] font-extrabold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-wide flex items-center justify-center min-h-[24px] md:min-h-[26px] text-center leading-none w-max max-w-[55%] shadow-sm"
-        >
-          <span class="truncate">Panen Baru</span>
-        </span>
-
-        <span
-          v-if="product.isVerified"
           class="bg-[#F4F1E4] text-[#1A4D2E] text-[9px] md:text-[10px] font-extrabold px-2 py-1 md:px-2.5 md:py-1.5 rounded-md md:rounded-lg flex items-center justify-center gap-1 uppercase tracking-wide min-h-[24px] md:min-h-[26px] leading-none w-max max-w-[45%] shadow-sm"
         >
-          <svg
-            class="w-3 h-3 shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
-            />
-          </svg>
-          <span class="truncate">Terverifikasi</span>
+          <span class="truncate">{{ product.category.name }}</span>
         </span>
       </div>
     </div>
 
-    <div class="p-4 md:p-5 flex-grow flex flex-col justify-between">
+    <div class="p-4 md:p-5 flex flex-col justify-between flex-1">
       <div>
+        <!-- Location -->
         <div
           class="flex items-center gap-1 text-[#6B7280] text-[9px] md:text-[11px] font-semibold mb-1.5 uppercase tracking-wider"
         >
@@ -66,31 +51,43 @@
           <span class="truncate">{{ product.location }}</span>
         </div>
 
+        <!-- Title -->
         <h2
-          class="text-sm md:text-xl py-1 md:py-2 font-extrabold text-[#111827] line-clamp-2 leading-snug"
+          class="text-sm md:text-xl py-1 md:py-2 font-extrabold text-[#111827] line-clamp-2 leading-snug min-h-[2.5rem] md:min-h-[4rem]"
         >
-          {{ product.title }}
+          {{ product.name }}
         </h2>
 
-        <div class="flex items-center gap-1.5 md:gap-2 mt-2 md:mt-3 mb-4">
+        <!-- Farmer -->
+        <div
+          class="flex items-center gap-1.5 md:gap-2 mt-2 md:mt-3 mb-4 min-h-[28px] md:min-h-[32px]"
+        >
           <NuxtImg
-            :src="product.seller.avatar"
-            :alt="product.seller.name"
+            v-if="product.farmer?.avatar"
+            :src="product.farmer?.avatar"
+            :alt="product.farmer?.name"
             class="w-5 h-5 md:w-6 md:h-6 rounded-full object-cover shrink-0"
             format="webp"
             loading="lazy"
           />
+          <div
+            v-else
+            class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gray-200 shrink-0 flex items-center justify-center text-[8px] font-bold text-gray-500"
+          >
+            {{ product.farmer?.name?.charAt(0) ?? "?" }}
+          </div>
+
           <div class="text-[10px] md:text-xs truncate">
             <span class="text-gray-500 hidden sm:inline md:inline">Oleh: </span>
             <span class="font-bold text-[#111827]">{{
-              product.seller.name
+              product.farmer?.name ?? "-"
             }}</span>
           </div>
 
           <div
             class="ml-auto flex items-center gap-1 text-[#00A63E] font-bold text-[10px] md:text-sm shrink-0"
           >
-            {{ product.points }}
+            {{ product.greenPoint }}
             <NuxtImg
               src="/icon/component/leaf.png"
               alt="Ikon Poin"
@@ -102,21 +99,23 @@
       </div>
 
       <div>
-        <hr class="border-gray-100 my-3">
-        <div class="flex justify-between items-end">
-          <div>
-            <p class="text-gray-500 text-[9px] md:text-xs font-medium mb-0.5">
-              {{ product.priceLabel }}
+        <hr class="border-gray-100 my-3" />
+        <div class="flex justify-between items-end gap-2">
+          <div class="min-w-0">
+            <!-- Price label pakai unit -->
+            <p
+              class="text-gray-500 text-[9px] md:text-xs font-medium mb-0.5 truncate"
+            >
+              Harga per {{ product.unit }}
             </p>
             <p
-              class="text-base md:text-2xl font-extrabold text-[#1A4D2E] leading-none"
+              class="text-base md:text-lg font-extrabold text-[#1A4D2E] leading-none whitespace-nowrap"
             >
-              {{ formatRupiah(product.price) }}
+              {{ product.price.formatted }}
             </p>
           </div>
 
-          <div>
-            <!-- Sesudah -->
+          <div class="shrink-0">
             <slot name="action">
               <ActionButton
                 :icon="actionIcon"
@@ -133,36 +132,32 @@
 </template>
 
 <script setup lang="ts">
-import { useProductCard } from '~/composables/component/useProductCard'
-import type { Product } from '~/../../types/market/product'
+import type { Product } from "~/../../types/market/development/MarketProduct";
 
-const router = useRouter() // ✅ navigasi manual
+const router = useRouter();
 
 const props = withDefaults(
   defineProps<{
-    product: Product
-    actionIcon?: string
-    actionVariant?: 'primary' | 'danger' | 'neutral'
-    size?: 'sm' | 'md' | 'lg'
-    linkTo?: string
+    product: Product;
+    actionIcon?: string;
+    actionVariant?: "primary" | "danger" | "neutral";
+    size?: "sm" | "md" | "lg";
+    linkTo?: string;
   }>(),
   {
-    actionIcon: '+',
-    actionVariant: 'primary',
-    size: 'md'
-  }
-)
-
-const { formatRupiah } = useProductCard()
+    actionIcon: "+",
+    actionVariant: "primary",
+    size: "md",
+  },
+);
 
 const emit = defineEmits<{
-  (e: 'action'): void
-}>()
+  (e: "action"): void;
+}>();
 
-// ✅ navigasi hanya jika linkTo ada
 function handleCardClick() {
   if (props.linkTo) {
-    router.push(props.linkTo)
+    router.push(props.linkTo);
   }
 }
 </script>

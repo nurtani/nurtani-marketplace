@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { challengesData } from '../../../data/landing/challenge'
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { challengesData } from "../../../data/landing/challenge";
 
-const { locale } = useI18n()
-const { t } = useI18n()
+const { locale } = useI18n();
+const { t } = useI18n();
 
 const activeChallenges = computed(() => {
-  const currentLang = locale.value as 'id' | 'en'
-  return challengesData[currentLang] || challengesData['id']
-})
+  const currentLang = locale.value as "id" | "en";
+  return challengesData[currentLang] || challengesData["id"];
+});
 </script>
 
 <template>
@@ -38,11 +38,11 @@ const activeChallenges = computed(() => {
       <LandingChallengeHeader />
 
       <div class="relative w-full pt-8 md:pt-16 flex justify-center">
-        <div
+        <!-- <div
           class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 scale-75 sm:scale-95 md:scale-110 lg:scale-[1.3] pointer-events-auto"
         >
           <LandingChallengeStackholderDiagram />
-        </div>
+        </div> -->
 
         <div
           class="relative z-10 grid grid-cols-2 w-full gap-x-2 sm:gap-x-6 md:gap-x-[28rem] lg:gap-x-[38rem] pt-4 md:pt-0"
@@ -50,7 +50,7 @@ const activeChallenges = computed(() => {
           <div class="flex flex-col gap-24 md:gap-40 lg:gap-52">
             <LandingChallengeCard
               v-for="(item, index) in activeChallenges.filter(
-                (_, i) => i % 2 === 0
+                (_, i) => i % 2 === 0,
               )"
               :key="`left-${index}`"
               :title="item.title"
@@ -58,7 +58,7 @@ const activeChallenges = computed(() => {
               :align="index === 0 ? 'left' : 'center'"
               :class="[
                 index === 0 ? 'mb-10 md:mb-0 md:ml-4 lg:ml-8' : '',
-                'md:self-center'
+                'md:self-center',
               ]"
               :icon="item.icon"
             />
@@ -69,7 +69,7 @@ const activeChallenges = computed(() => {
           >
             <LandingChallengeCard
               v-for="(item, index) in activeChallenges.filter(
-                (_, i) => i % 2 !== 0
+                (_, i) => i % 2 !== 0,
               )"
               :key="`right-${index}`"
               :title="item.title"
@@ -77,7 +77,7 @@ const activeChallenges = computed(() => {
               :align="index === 0 ? 'right' : 'center'"
               :class="[
                 index === 0 ? 'mb-2 md:mr-4 lg:mr-8' : '',
-                'md:self-center'
+                'md:self-center',
               ]"
               :icon="item.icon"
             />
