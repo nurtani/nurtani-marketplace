@@ -1,49 +1,49 @@
 // stores/cart.ts
-import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 import type {
   CartItem,
-  Product,
-} from "~/../../types/market/development/MarketProduct";
+  Product
+} from '~/../../types/market/development/MarketProduct'
 
 export const useCartStore = defineStore(
-  "cart",
+  'cart',
   () => {
-    const items = ref<CartItem[]>([]);
+    const items = ref<CartItem[]>([])
 
-    const uniqueItemCount = computed(() => items.value.length);
+    const uniqueItemCount = computed(() => items.value.length)
 
     function addItem(product: Product) {
       // ✅ Ganti product.title → product.name
-      console.log("🛒 addItem dipanggil:", product.name);
-      const exists = items.value.find((item) => item.product.id === product.id);
+      console.log('🛒 addItem dipanggil:', product.name)
+      const exists = items.value.find(item => item.product.id === product.id)
       if (exists) {
-        exists.quantity += 1;
+        exists.quantity += 1
       } else {
         items.value.push({
           cartItemId: `${product.id}-${Date.now()}`,
           product,
-          quantity: 1,
-        });
+          quantity: 1
+        })
       }
-      console.log("🛒 items sekarang:", items.value.length);
+      console.log('🛒 items sekarang:', items.value.length)
     }
 
     function removeItem(cartItemId: string | number) {
       items.value = items.value.filter(
-        (item) => item.cartItemId !== cartItemId,
-      );
+        item => item.cartItemId !== cartItemId
+      )
     }
 
     function clearCart() {
-      items.value = [];
+      items.value = []
     }
 
-    return { items, uniqueItemCount, addItem, removeItem, clearCart };
+    return { items, uniqueItemCount, addItem, removeItem, clearCart }
   },
   {
     persist: {
-      storage: piniaPluginPersistedstate.localStorage(),
-    },
-  },
-);
+      storage: piniaPluginPersistedstate.localStorage()
+    }
+  }
+)

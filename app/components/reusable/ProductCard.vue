@@ -99,7 +99,7 @@
       </div>
 
       <div>
-        <hr class="border-gray-100 my-3" />
+        <hr class="border-gray-100 my-3">
         <div class="flex justify-between items-end gap-2">
           <div class="min-w-0">
             <!-- Price label pakai unit -->
@@ -132,32 +132,32 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from "~/../../types/market/development/MarketProduct";
+import type { Product } from '~/../../types/market/development/MarketProduct'
 
-const router = useRouter();
+const router = useRouter()
 
 const props = withDefaults(
   defineProps<{
-    product: Product;
-    actionIcon?: string;
-    actionVariant?: "primary" | "danger" | "neutral";
-    size?: "sm" | "md" | "lg";
-    linkTo?: string;
+    product: Product
+    actionIcon?: string
+    actionVariant?: 'primary' | 'danger' | 'neutral'
+    size?: 'sm' | 'md' | 'lg'
+    linkTo?: string
   }>(),
   {
-    actionIcon: "+",
-    actionVariant: "primary",
-    size: "md",
-  },
-);
+    actionIcon: '+',
+    actionVariant: 'primary',
+    size: 'md'
+  }
+)
 
 const emit = defineEmits<{
-  (e: "action"): void;
-}>();
+  (e: 'action'): void
+}>()
 
 function handleCardClick() {
   if (props.linkTo) {
-    router.push(props.linkTo);
+    router.push(props.linkTo)
   }
 }
 </script>

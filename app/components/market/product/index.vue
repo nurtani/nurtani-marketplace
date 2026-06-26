@@ -32,11 +32,17 @@
           >
             <!-- Loading: pertama kali fetch (belum ada data sama sekali) -->
             <template v-if="asyncStatus === 'loading'">
-              <ProductCardSkeleton v-for="n in 8" :key="n" />
+              <ProductCardSkeleton
+                v-for="n in 8"
+                :key="n"
+              />
             </template>
 
             <template v-else-if="status === 'pending'">
-              <ProductCardSkeleton v-for="n in 8" :key="n" />
+              <ProductCardSkeleton
+                v-for="n in 8"
+                :key="n"
+              />
             </template>
 
             <!-- Error -->
@@ -86,23 +92,20 @@
 </template>
 
 <script setup lang="ts">
-import { useProduct } from "~/composables/market/useProduct";
-import { useCartMutation } from "~/composables/market/useCartMutation";
-import ProductCardSkeleton from "~/components/reusable/ProductCardSkeleton.vue";
-import EmtyState from "~/components/reusable/EmtyState.vue";
-import ErrorState from "~/components/reusable/ErrorState.vue";
+import { useProduct } from '~/composables/market/useProduct'
+import { useCartMutation } from '~/composables/market/useCartMutation'
+import ProductCardSkeleton from '~/components/reusable/ProductCardSkeleton.vue'
+import EmtyState from '~/components/reusable/EmtyState.vue'
+import ErrorState from '~/components/reusable/ErrorState.vue'
 
 const {
   isFilterOpen,
   handleFilterChange,
   slugify,
   products,
-  meta,
   status,
   asyncStatus,
-  error,
-  filters,
-  handleSearch,
-} = useProduct();
-const { addToCart } = useCartMutation();
+  handleSearch
+} = useProduct()
+const { addToCart } = useCartMutation()
 </script>

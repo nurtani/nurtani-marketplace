@@ -28,7 +28,6 @@
     </p>
 
     <button
-      @click=""
       class="mt-6 px-6 py-2.5 bg-green-800 text-white font-medium rounded-lg hover:bg-green-900 transition-colors focus:ring-4 focus:ring-green-100"
     >
       Coba Muat Ulang

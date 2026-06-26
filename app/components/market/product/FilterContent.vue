@@ -30,8 +30,13 @@
       </button>
     </div>
 
-    <div v-if="!isMobile" class="mb-8">
-      <h3 class="font-bold text-[#374151] mb-3 text-sm">Cari Produk</h3>
+    <div
+      v-if="!isMobile"
+      class="mb-8"
+    >
+      <h3 class="font-bold text-[#374151] mb-3 text-sm">
+        Cari Produk
+      </h3>
       <MarketProductSearchFilter @search="handleSearch" />
     </div>
 
@@ -84,7 +89,7 @@
             name="kategori"
             :value="cat.value"
             class="w-5 h-5 lg:w-4 lg:h-4 text-[#1A4F32] bg-white border-gray-400 focus:ring-[#1A4F32] focus:ring-2 cursor-pointer accent-[#1A4F32]"
-          />
+          >
           <span
             class="ml-3 text-[15px] lg:text-sm"
             :class="
@@ -114,7 +119,7 @@
             type="checkbox"
             :value="status.value"
             class="w-5 h-5 lg:w-4 lg:h-4 text-[#1A4F32] bg-white border-gray-400 rounded focus:ring-[#1A4F32] focus:ring-2 cursor-pointer accent-[#1A4F32]"
-          />
+          >
           <span
             class="ml-3 text-[15px] lg:text-sm text-gray-600 group-hover:text-gray-800"
           >
@@ -125,7 +130,9 @@
     </div>
 
     <div class="mb-8">
-      <h3 class="font-bold text-[#374151] mb-4 text-sm lg:text-base">Harga</h3>
+      <h3 class="font-bold text-[#374151] mb-4 text-sm lg:text-base">
+        Harga
+      </h3>
       <div class="flex flex-col space-y-4 lg:space-y-3">
         <label
           v-for="price in priceOptions"
@@ -138,7 +145,7 @@
             name="harga"
             :value="price.value"
             class="w-5 h-5 lg:w-4 lg:h-4 text-[#1A4F32] bg-white border-gray-400 focus:ring-[#1A4F32] focus:ring-2 cursor-pointer accent-[#1A4F32]"
-          />
+          >
           <span
             class="ml-3 text-[15px] lg:text-sm"
             :class="
@@ -156,21 +163,21 @@
 </template>
 
 <script setup lang="ts">
-import { useFilterContent } from "@/composables/market/useFilterContent";
-import type { Filters } from "~~/types/market/FilterOption";
+import { useFilterContent } from '@/composables/market/useFilterContent'
+import type { Filters } from '~~/types/market/FilterOption'
 
 defineProps({
   isMobile: {
     type: Boolean,
-    default: true,
-  },
-});
+    default: true
+  }
+})
 
 const emit = defineEmits<{
-  (e: "close"): void;
-  (e: "filter-change", payload: Filters): void;
-  (e: "search", value: string): void;
-}>();
+  (e: 'close'): void
+  (e: 'filter-change', payload: Filters): void
+  (e: 'search', value: string): void
+}>()
 
 const {
   filters,
@@ -178,6 +185,6 @@ const {
   categoryOptions,
   statusOptions,
   priceOptions,
-  sortOptionsMapped,
-} = useFilterContent(emit);
+  sortOptionsMapped
+} = useFilterContent(emit)
 </script>

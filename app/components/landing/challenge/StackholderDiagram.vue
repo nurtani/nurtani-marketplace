@@ -47,7 +47,7 @@
         <span
           class="text-white font-bold text-xs sm:text-base text-center px-2 drop-shadow-md"
         >
-          Masyarakat<br />Modern
+          Masyarakat<br>Modern
         </span>
       </div>
 

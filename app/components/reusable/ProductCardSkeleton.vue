@@ -23,7 +23,7 @@
       </div>
 
       <div>
-        <hr class="border-gray-100 my-3" />
+        <hr class="border-gray-100 my-3">
         <div class="flex justify-between items-end">
           <div class="flex flex-col gap-2">
             <!-- Price label -->

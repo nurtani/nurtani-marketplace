@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import type { ChallengeCardProps } from "../../../../types/landing/challenge";
+import { computed } from 'vue'
+import type { ChallengeCardProps } from '../../../../types/landing/challenge'
 
 const props = withDefaults(defineProps<ChallengeCardProps>(), {
-  align: "left",
-});
+  align: 'left'
+})
 
 const positionClass = computed(() => {
-  if (props.align === "right") return "self-end";
-  if (props.align === "center") return "self-center";
-  return "self-start";
-});
+  if (props.align === 'right') return 'self-end'
+  if (props.align === 'center') return 'self-center'
+  return 'self-start'
+})
 </script>
 
 <template>
@@ -20,7 +20,7 @@ const positionClass = computed(() => {
       'w-full h-auto',
       'md:w-[290px]',
 
-      positionClass,
+      positionClass
     ]"
     style="
       background: linear-gradient(
