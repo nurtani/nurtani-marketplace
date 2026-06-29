@@ -9,11 +9,11 @@
         class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full mt-8 md:mt-10 justify-items-center"
       >
         <ProductCard
-          v-for="item in dummyProducts"
+          v-for="item in products"
           :key="item.id"
           :product="item"
           action-icon=">"
-          :link-to="`/market/${slugify(item.title)}-${item.id}`"
+          :link-to="`/market/${slugify(item.name)}-${item.id}`"
         />
       </div>
 
@@ -28,12 +28,13 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
-import { dummyProduct } from '~/data/market/product'
+// import { dummyProduct } from '~/data/market/product'
 import { useProduct } from '~/composables/market/useProduct'
 
 const { t } = useI18n()
-const dummyProducts = ref(dummyProduct)
+// const dummyProducts = ref(dummyProduct)
+
+const { products } = useProduct()
 
 const { slugify } = useProduct()
 </script>

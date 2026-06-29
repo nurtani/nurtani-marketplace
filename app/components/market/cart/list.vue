@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CartItem } from '~~/types/market/product'
+import type { CartItem } from '~~/types/market/development/MarketProduct'
 
 const props = defineProps<{
   items: CartItem[]

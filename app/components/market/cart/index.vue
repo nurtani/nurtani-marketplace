@@ -5,7 +5,7 @@ const cart = useCartStore()
 
 const totalSustainabilityPoints = computed(() =>
   cart.items.reduce(
-    (total, item) => total + (item.product?.points || 0) * item.quantity,
+    (total, item) => total + (item.product?.greenPoint || 0) * item.quantity,
     0
   )
 )

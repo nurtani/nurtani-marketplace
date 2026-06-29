@@ -1,7 +1,10 @@
 // stores/cart.ts
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { CartItem, Product } from '~~/types/market/product'
+import type {
+  CartItem,
+  Product
+} from '~~/types/market/development/MarketProduct'
 
 export const useCartStore = defineStore(
   'cart',
@@ -10,7 +13,7 @@ export const useCartStore = defineStore(
 
     const uniqueItemCount = computed(() => items.value.length)
     function addItem(product: Product) {
-      console.log('🛒 addItem dipanggil:', product.title)
+      console.log('🛒 addItem dipanggil:', product.name)
       const exists = items.value.find(item => item.product.id === product.id)
       if (exists) {
         exists.quantity += 1

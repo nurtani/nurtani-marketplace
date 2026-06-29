@@ -21,16 +21,16 @@
         <MarketProductDetailHeader :product="product" />
         <MarketProductDetailOrderBox />
         <MarketProductDetailFarmerCard
-          :seller="product.seller"
-          :trust-score="product.points"
+          :seller="product.farmer"
+          :trust-score="product.greenPoint"
           button-text="Lihat Semua Produk"
         />
       </div>
 
       <div class="lg:hidden w-full">
         <MarketProductDetailFarmerCard
-          :seller="product.seller"
-          :trust-score="product.points"
+          :seller="product.farmer"
+          :trust-score="product.greenPoint"
           button-text="Lihat Semua Produk"
         />
       </div>
@@ -65,7 +65,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Product } from '~~/types/market/product'
+import type { DetailProduct } from '~~/types/market/development/ProductDetail'
+import type { History } from '~~/types/market/development/ProductHistory'
 import { useFloatingElement } from '~/composables/component/useFloatingElement'
 
 const { updateOffset, orderBoxOffset } = useFloatingElement()
@@ -102,12 +103,13 @@ onUnmounted(() => {
 })
 
 const { product } = defineProps<{
-  product: Product
+  product: DetailProduct
+  histories: History[]
 }>()
 
-const histories = computed(() => {
-  return product?.histories ? [...product.histories].reverse() : []
-})
+// const histories = computed(() => {
+//   return product?.histories ? [...product.histories].reverse() : []
+// })
 
-const safeImages = computed(() => product?.images ?? [])
+const safeImages = computed(() => product?.imageUrls ?? [])
 </script>

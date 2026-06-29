@@ -40,7 +40,7 @@
 
         <div class="text-sm md:text-base text-[#4A5568]">
           <span class="font-normal">ID Petani: </span>
-          <span class="font-medium text-[#4A5565]">{{ seller.farmerId }}</span>
+          <span class="font-medium text-[#4A5565]">{{ seller.id }}</span>
         </div>
       </div>
     </div>
@@ -61,10 +61,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Seller } from '~~/types/market/product'
+import type { Farmer } from '~~/types/market/development/MarketProduct'
 
 defineProps<{
-  seller: Seller
+  seller: Farmer
   trustScore: number
   buttonText: string
 }>()

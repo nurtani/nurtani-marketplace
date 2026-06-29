@@ -29,31 +29,13 @@
               src="/icon/component/clock.png"
               class="w-3.5 h-3.5"
             />
-            <span>{{ history.date }}</span>
-          </div>
-
-          <div
-            class="flex items-center gap-2 text-gray-800 font-semibold text-xs"
-          >
-            <NuxtImg
-              src="/icon/component/location3.png"
-              class="w-3.5 h-3.5"
-            />
-            <span>{{ history.actor.name }}</span>
+            <span>{{ formattedDate }}</span>
           </div>
         </div>
 
         <p class="text-gray-500 text-sm leading-6 mt-1 line-clamp-2">
-          {{ history.activity }}
+          {{ history.description }}
         </p>
-
-        <NuxtLink
-          v-if="history.verification"
-          :to="verificationUrl"
-          class="text-green-600 font-bold text-xs flex items-center gap-1 mt-1 underline decoration-2 underline-offset-4"
-        >
-          Cek Keaslian Digital &rarr;
-        </NuxtLink>
       </div>
     </div>
   </div>
@@ -61,15 +43,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { ProductHistory } from '~~/types/market/product'
+import type { History } from '~~/types/market/development/ProductHistory'
 import { useHistory } from '~/composables/market/detail/useHistory'
 
 const props = defineProps<{
-  history: ProductHistory
+  history: History
 }>()
-
-const route = useRoute()
-const slug = route.params.slug as string // ambil slug dari URL aktif
 
 const { getIcon, getContainerColor, getDotColor } = useHistory()
 
@@ -79,8 +58,15 @@ const iconContainerColor = computed(() =>
   getContainerColor(props.history.type)
 )
 
-// Generate URL dinamis berdasarkan slug & history id
-const verificationUrl = computed(
-  () => `/market/${slug}/history/${props.history.id}`
-)
+// Format tanggal createdAt
+const formattedDate = computed(() => {
+  return new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  }).format(new Date(props.history.createdAt))
+})
 </script>
